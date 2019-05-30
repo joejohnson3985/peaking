@@ -1,3 +1,5 @@
+@import '../../Utilities/_Variables.scss';
+
 .App {
   text-align: center;
 }
@@ -30,4 +32,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main {
+  grid-area: main;
+}
+
+.sidebar-container {
+  grid-area: side;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  height: 100vh;
 }

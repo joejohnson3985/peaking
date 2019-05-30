@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../../Media/logo.svg';
 import './App.scss';
+import { Route, Switch } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar'
 import Garden from '../../Components/Garden/Garden'
 import Filter from '../Filter/Filter'
@@ -11,12 +11,14 @@ class App extends Component {
 
   render() {
     return(
-      <div>
-        <Sidebar />
-        <Garden />
-        <Filter />
-        <Results />
-        <ExpandedPlant />
+      <div className='content'>
+        <Sidebar className='Sidebar-container'/>
+        <main>
+          <Garden />
+          <Filter />
+          <Results />
+        </main>
+        <Route exact path='/plant/:id' ExpandedPlant />
       </div>
     )
   }
