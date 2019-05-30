@@ -5,9 +5,9 @@ class Garden extends Component {
 
   render() {
     return(
-      <div>
+      <div className='garden'>
         <h1>Current Garden</h1>
-        <div>
+        <div className='plants-container'>
           <p>This will display all your plants in that Garden.</p>
         </div>
         <h4>Description: Description of your Garden</h4>

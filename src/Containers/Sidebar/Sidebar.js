@@ -5,9 +5,9 @@ class Sidebar extends Component {
 
   render() {
     return(
-      <div>
-        <h1>Your Gardens</h1>
-        
+      <div className='bar'>
+        <h1>For Plants Sake</h1>
+        <h2>Helping you love your plants.</h2>
       </div>
     )
   }

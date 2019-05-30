@@ -1,1 +1,13 @@
-_Variables.scss
+$light-text: #EDEDED;
+$dark-text: #6f6f6f;
+$light-accent: #f3d5d1;
+$dark-accent: #df7975;
+$primary: #36422A;
+$secondary: #C5CCA2;
+$light-primary: #E8EADC;
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

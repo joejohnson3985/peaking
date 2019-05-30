@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Filter.scss'
 
 class Filter extends Component {
   constructor() {
@@ -17,8 +18,9 @@ class Filter extends Component {
 
   render() {
     return(
-      <div>
+      <div className='filter'>
         <input name='search' value={this.state.search } onChange={this.handleChange} type='text'/>
+        <button>Search</button>
       </div>
     )
   }
