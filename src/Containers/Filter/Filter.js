@@ -76,15 +76,15 @@ class Filter extends Component {
     return(
       <form className='filter'>
         <div className='form-items'>
-          <label for='search'>Location</label>
+          <label htmlFor='search'>Location</label>
           <input className='filter-options' name='search' value={search} onBlur={this.handleSearch} onChange={this.handleChange} type='text'/>
         </div>
         <div className='form-items'>
-          <label for='maxDistance'>Radius</label>
+          <label htmlFor='maxDistance'>Radius</label>
           <input className='filter-options' name='maxDistance' onChange={this.handleChange} value={maxDistance} type='number'/>
         </div>
         <div className='form-items'>
-          <label for='minStars'>Stars</label>
+          <label htmlFor='minStars'>Stars</label>
           <select className='filter-options' value={minStars} name='minStars' onChange={this.handleChange}>
             <option value={0}>All Ratings</option>
             <option value={1}>1</option>
@@ -95,11 +95,11 @@ class Filter extends Component {
           </select>
         </div>
         <div className='form-items'>
-          <label for='minLength'>Minimum Length</label>
+          <label htmlFor='minLength'>Minimum Length</label>
           <input className='filter-options' name='minLength' onChange={this.handleChange} value={minLength} type='number'/>
         </div>
         <div className='form-items'>
-          <label for='sort'>Sort By</label>
+          <label htmlFor='sort'>Sort By</label>
           <select className='filter-options' value={sort} name='sort' onChange={this.handleChange}>
             <option value='quality'>Quality</option>
             <option value='distance'>Distance</option>
