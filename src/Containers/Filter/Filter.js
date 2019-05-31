@@ -28,7 +28,7 @@ class Filter extends Component {
     const error = this.errorLocating
     const options = {timeout: 5000}
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success, error ,options )
+      navigator.geolocation.getCurrentPosition(success, error, options )
     } else {
       console.log('not working');
     }
