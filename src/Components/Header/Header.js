@@ -8,6 +8,8 @@ const Header = () => {
     whatToRender = 'Future Hikes'
   } else if(path.includes('completed-hikes')){
     whatToRender = 'Completed Hikes'
+  } else {
+    whatToRender = Find Hikes
   }
   return(
     <div className='header'>
