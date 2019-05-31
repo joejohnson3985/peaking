@@ -78,14 +78,14 @@ class Filter extends Component {
     const { sort, maxDistance, minStars, search, minLength} = this.state
     return(
       <div className='filter'>
-        <input name='search' value={search} onBlur={this.handleSearch} onChange={this.handleChange} type='text'/>
+        <input className='filter-options' name='search' value={search} onBlur={this.handleSearch} onChange={this.handleChange} type='text'/>
         <form>
-          <input name='maxDistance' onChange={this.handleChange} value={maxDistance} type='number'/>
-          <select value={sort} name='sort' onChange={this.handleChange}>
+          <input className='filter-options' name='maxDistance' onChange={this.handleChange} value={maxDistance} type='number'/>
+          <select className='filter-options' value={sort} name='sort' onChange={this.handleChange}>
             <option value='quality'>Quality</option>
             <option value='distance'>Distance</option>
           </select>
-          <select value={minStars} name='minStars' onChange={this.handleChange}>
+          <select className='filter-options' value={minStars} name='minStars' onChange={this.handleChange}>
             <option value={0}>All Ratings</option>
             <option value={1}>1</option>
             <option value={2}>2</option>
@@ -93,7 +93,7 @@ class Filter extends Component {
             <option value={4}>4</option>
             <option value={5}>5</option>
           </select>
-          <input name='minLength' onChange={this.handleChange} value={minLength} type='number'/>
+          <input className='filter-options' name='minLength' onChange={this.handleChange} value={minLength} type='number'/>
           <button onClick={(e) => this.handleSubmit(e)}>Update Results</button>
         </form>
       </div>

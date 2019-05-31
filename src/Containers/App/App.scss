@@ -34,16 +34,9 @@
   }
 }
 
-.main {
-  grid-area: main;
-}
-
-.sidebar-container {
-  grid-area: side;
-}
-
 .content {
   display: grid;
   grid-template-columns: 1fr 5fr;
   height: 100vh;
+  clear: left;
 }
