@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar'
 import Garden from '../../Components/Garden/Garden'
 import Filter from '../Filter/Filter'
 import Results from '../Results/Results'
 import ExpandedPlant from '../ExpandedPlant/ExpandedPlant'
+
 
 class App extends Component {
 
@@ -18,10 +19,11 @@ class App extends Component {
           <Filter />
           <Results />
         </main>
-        <Route exact path='/plant/:id' ExpandedPlant />
+        <Route exact path='/plant/:id' component={ExpandedPlant} />
       </div>
     )
   }
 }
+
 
 export default App;
