@@ -1,5 +1,9 @@
 @import '../../Utilities/_Variables.scss';
 
+body {
+  overflow-x: hidden;
+}
+
 .App {
   text-align: center;
 }
@@ -35,8 +39,8 @@
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
+  // display: flex;
+  // grid-template-columns: 1fr 5fr;
   height: 100vh;
   clear: left;
 }

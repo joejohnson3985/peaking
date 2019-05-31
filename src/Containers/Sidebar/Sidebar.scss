@@ -1,17 +1,38 @@
 @import '../../Utilities/_Variables.scss';
 
+i {
+  font-size: 30px;
+  margin: 5px;
+  color: $dark-accent;
+}
+
 .bar {
   background: $light-text;
   color: $dark-accent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 5px 0 5px;
   text-align: center;
+  height: 100vh;
+  width: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.7s;
+  position: fixed;
+
+  i {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
   
 
   h1 {
     font-size: 30px;
     margin: 0;
   }
+}
+
+.show-nav {
+  width: 250px;
+  padding: 20px;
 }
