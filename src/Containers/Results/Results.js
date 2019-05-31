@@ -5,6 +5,27 @@ import Trail from '../Trail/Trail'
 
 
 class Results extends Component {
+  constructor() {
+    super()
+    this.state = {
+      trailsToDisplay: []
+    }
+  }
+
+  componentDidMount() {
+    let source = this.checkSource()
+  }
+
+  checkSource = () => {
+    switch (window.location.href) {
+      case 'http://localhost:3000/user/future-hikes':
+        return <p>Hikes you would like to do</p>
+      case 'http://localhost:3000/user/completed-hikes':
+        return <p>Hikes you have already done</p>
+      default:
+        return this.props.trails;
+    }
+  }
 
   displayTrails = () => {
     if(this.props.trails.length) {

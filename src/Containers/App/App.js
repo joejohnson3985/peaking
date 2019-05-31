@@ -8,6 +8,12 @@ import Header from '../../Components/Header/Header'
 
 class App extends Component {
 
+  componentDidMount() {
+    if(!localStorage.getItem('hikeLater')) {
+      localStorage.setItem('hikeLater', JSON.stringify([]))
+    }
+  }
+
   render() {
     return(
       <div className='content'>
