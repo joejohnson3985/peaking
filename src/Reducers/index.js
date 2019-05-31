@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import { plantsReducer } from './plantsReducer'
+import { trailsReducer } from './trailsReducer'
 
 
 const rootReducer = combineReducers({
-  plants: plantsReducer
+  trails: trailsReducer
 });
 
 export default rootReducer;
