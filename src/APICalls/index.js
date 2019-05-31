@@ -17,9 +17,22 @@ export const getSearchedTrails = address => {
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${gmapikey}`
   return fetch(url).then(response => {
     if (!response.ok) {
-      throw new Error('Error fetching trails!');
+      console.log(response)
+      throw new Error('Error grabbing that location!');
     }
     return response.json();
   })
-} 
+}
+
+export const getCurrentLocationName = location => {
+  const { lat, lng } = location
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${gmapikey}`
+  return fetch(url).then(response => {
+    if (!response.ok) {
+      console.log(response)
+      throw new Error('Error grabbing that location!');
+    }
+    return response.json();
+  })
+}  
 
