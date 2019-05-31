@@ -5,6 +5,8 @@ $dark-accent: #df7975;
 $primary: #36422A;
 $secondary: #C5CCA2;
 $light-primary: #E8EADC;
+$spinner-size: 2rem;
+$animation-speed: 1.2s;
 
 @mixin center-flex {
   display: flex;

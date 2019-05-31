@@ -2,22 +2,19 @@ import React, { Component } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar'
-import Filter from '../Filter/Filter'
 import Results from '../Results/Results'
-import ExpandedPlant from '../ExpandedPlant/ExpandedPlant'
-
+import Filter from '../Filter/Filter'
 
 class App extends Component {
 
   render() {
     return(
       <div className='content'>
-        <Sidebar className='Sidebar-container'/>
+        <Sidebar />
         <main>
-          <Filter />
+          <Route path='/' component={Filter} />
           <Results />
         </main>
-        <Route exact path='/plant/:id' component={ExpandedPlant} />
       </div>
     )
   }

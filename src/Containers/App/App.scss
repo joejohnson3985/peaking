@@ -1,5 +1,16 @@
 @import '../../Utilities/_Variables.scss';
 
+body {
+  overflow-x: hidden;
+  background-image: url('../../Media/green_landscape.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  width: 100vw;
+}
+
 .App {
   text-align: center;
 }
@@ -34,16 +45,9 @@
   }
 }
 
-.main {
-  grid-area: main;
-}
-
-.sidebar-container {
-  grid-area: side;
-}
-
 .content {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
+  display: flex;
+  // grid-template-columns: 1fr 5fr;
   height: 100vh;
+  clear: left;
 }

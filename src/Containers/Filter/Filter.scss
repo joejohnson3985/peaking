@@ -1,9 +1,19 @@
 @import '../../Utilities/_Variables.scss';
 
 .filter {
-  border: 1px solid red;
-  height: 10vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  margin: 0 100px;
+  background-color: rgba(255,255,255, 0.6);
+
+
+  .filter-options {
+    margin: 0 10px;
+    font-size: 18px;
+    color: $dark-text;
+  }
+
+  .submit-btn {}
 }
