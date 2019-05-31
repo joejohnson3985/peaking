@@ -12,7 +12,7 @@ class App extends Component {
       <div className='content'>
         <Sidebar />
         <main>
-          <Route path='/' component={Filter} />
+          <Route exact path='/' component={Filter} />
           <Results />
         </main>
       </div>

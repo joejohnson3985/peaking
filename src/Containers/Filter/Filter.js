@@ -75,12 +75,16 @@ class Filter extends Component {
     const { sort, maxDistance, minStars, search, minLength} = this.state
     return(
       <form className='filter'>
-        <input className='filter-options' name='search' value={search} onBlur={this.handleSearch} onChange={this.handleChange} type='text'/>
+        <div className='form-items'>
+          <label for='search'>Location</label>
+          <input className='filter-options' name='search' value={search} onBlur={this.handleSearch} onChange={this.handleChange} type='text'/>
+        </div>
+        <div className='form-items'>
+          <label for='maxDistance'>Radius</label>
           <input className='filter-options' name='maxDistance' onChange={this.handleChange} value={maxDistance} type='number'/>
-          <select className='filter-options' value={sort} name='sort' onChange={this.handleChange}>
-            <option value='quality'>Quality</option>
-            <option value='distance'>Distance</option>
-          </select>
+        </div>
+        <div className='form-items'>
+          <label for='minStars'>Stars</label>
           <select className='filter-options' value={minStars} name='minStars' onChange={this.handleChange}>
             <option value={0}>All Ratings</option>
             <option value={1}>1</option>
@@ -89,8 +93,19 @@ class Filter extends Component {
             <option value={4}>4</option>
             <option value={5}>5</option>
           </select>
+        </div>
+        <div className='form-items'>
+          <label for='minLength'>Minimum Length</label>
           <input className='filter-options' name='minLength' onChange={this.handleChange} value={minLength} type='number'/>
-          <div className='submit-btn' role='button' onClick={this.handleSubmit}>Update Results</div>
+        </div>
+        <div className='form-items'>
+          <label for='sort'>Sort By</label>
+          <select className='filter-options' value={sort} name='sort' onChange={this.handleChange}>
+            <option value='quality'>Quality</option>
+            <option value='distance'>Distance</option>
+          </select>
+        </div>
+        <div className='submit-btn' role='button' onClick={this.handleSubmit}>Update Results</div>
       </form>
     )
   }
