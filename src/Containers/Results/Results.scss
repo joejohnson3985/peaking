@@ -1,5 +1,9 @@
 @import '../../Utilities/_Variables.scss';
 
 .results {
-  height: 45vh;
+  overflow-y: auto;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
