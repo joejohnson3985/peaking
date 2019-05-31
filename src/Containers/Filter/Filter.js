@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Filter.scss'
-import { getSearchedTrails } from '../../APICalls'
-import { getTrails } from '../../APICalls';
+import { getTrails, getSearchedTrails, getCurrentLocationName } from '../../APICalls'
 import { setTrails } from '../../Actions';
 import { connect } from 'react-redux';
 
@@ -36,11 +35,17 @@ class Filter extends Component {
   }
 
   setCurrentLocation = (pos) => {
-    this.setState({lat: pos.coords.latitude, lng: pos.coords.longitude}, () => {
-      getTrails(this.state)
-      .then(results => this.props.setTrails(results.trails))
-    })
+    const { latitude, longitude } = pos.coords
+    getCurrentLocationName({lat: latitude, lng: longitude})
+      .then(query => this.findLocalAdress(query.results))
+      .then(address => this.setState({search: address.formatted_address, lat: latitude, lng: longitude}, () => {
+        getTrails(this.state)
+          .then(results => this.props.setTrails(results.trails))
+        }
+      ))
   }
+
+  findLocalAdress = (results) => (results.find(result => result.types.includes("locality")))
 
   errorLocating = () => {
     console.log('FUCK')
@@ -72,25 +77,26 @@ class Filter extends Component {
   render() {
     const { sort, maxDistance, minStars, search, minLength} = this.state
     return(
-      <form className='filter'>
-        <input name='maxDistance' onChange={this.handleChange} value={maxDistance} type='number'/>
-        <select value={sort} name='sort' onChange={this.handleChange}>
-          <option value='quality'>Quality</option>
-          <option value='distance'>Distance</option>
-        </select>
-        <select value={minStars} name='minStars' onChange={this.handleChange}>
-          <option value={0}>All Ratings</option>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-        </select>
-        <input name='minLength' onChange={this.handleChange} value={minLength} type='number'/>
-        <input name='search' value={search} onChange={this.handleChange} type='text'/>
-        <button onClick={(e) => this.handleSearch(e)}>Update Location</button>
-        <button onClick={(e) => this.handleSubmit(e)}>Update Results</button>
-      </form>
+      <div className='filter'>
+        <input name='search' value={search} onBlur={this.handleSearch} onChange={this.handleChange} type='text'/>
+        <form>
+          <input name='maxDistance' onChange={this.handleChange} value={maxDistance} type='number'/>
+          <select value={sort} name='sort' onChange={this.handleChange}>
+            <option value='quality'>Quality</option>
+            <option value='distance'>Distance</option>
+          </select>
+          <select value={minStars} name='minStars' onChange={this.handleChange}>
+            <option value={0}>All Ratings</option>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
+          </select>
+          <input name='minLength' onChange={this.handleChange} value={minLength} type='number'/>
+          <button onClick={(e) => this.handleSubmit(e)}>Update Results</button>
+        </form>
+      </div>
     )
   }
 }
