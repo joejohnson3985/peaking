@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Sidebar.scss';
-import Filter from '../Filter/Filter'
 
 class Sidebar extends Component {
   constructor() {
@@ -16,16 +15,15 @@ class Sidebar extends Component {
 
   render() {
     let css = 'bar';
-    if(this.state.showNav) {css = 'bar show-nav'}
+    if(this.state.showNav) {css = 'bar show-nav' }
     return(
-      <div>
-        <i className="fas fa-bars" onClick={this.showSidebar}></i>
+      <div className='side-bar-container'>
+        <i className='fas fa-bars' onClick={this.showSidebar}></i>
         <div className={css}>
           <div>
-            <i className="fas fa-times" onClick={this.showSidebar}></i>
+            <i className='fas fa-times' onClick={this.showSidebar}></i>
             <h1>Peaking</h1>
           </div>
-          <Filter />
         </div>
       </div>
     )

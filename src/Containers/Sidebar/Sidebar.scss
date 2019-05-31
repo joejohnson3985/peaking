@@ -2,15 +2,24 @@
 
 i {
   font-size: 30px;
-  margin: 5px;
+  margin: 25px;
   color: $dark-accent;
+
+  &:hover {
+    color: $light-accent;
+    cursor: pointer;
+  }
 }
+
+.side-bar-container {
+  position: absolute;
+}
+
 
 .bar {
   background: $light-text;
   color: $dark-accent;
   text-align: center;
-  height: 100vh;
   width: 0;
   z-index: 1;
   top: 0;
@@ -18,6 +27,7 @@ i {
   overflow-x: hidden;
   transition: 0.7s;
   position: fixed;
+  box-shadow: 0 0 11px rgba(33,33,33,.6);
 
   i {
     position: absolute;
@@ -35,4 +45,5 @@ i {
 .show-nav {
   width: 250px;
   padding: 20px;
+  margin: 15px 0 0 15px;
 }

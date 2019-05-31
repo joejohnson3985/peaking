@@ -26,9 +26,8 @@ class Filter extends Component {
   getLocation = () => {
     const success = this.setCurrentLocation
     const error = this.errorLocating
-    const options = {timeout: 5000}
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success, error, options )
+      navigator.geolocation.getCurrentPosition(success, error )
     } else {
       console.log('not working');
     }
@@ -39,23 +38,22 @@ class Filter extends Component {
     getCurrentLocationName({lat: latitude, lng: longitude})
       .then(query => this.findLocalAdress(query.results))
       .then(address => this.setState({search: address.formatted_address, lat: latitude, lng: longitude}, () => {
-        getTrails(this.state)
-          .then(results => this.props.setTrails(results.trails))
+        this.handleSubmit()
         }
       ))
   }
 
-  findLocalAdress = (results) => (results.find(result => result.types.includes("locality")))
+  findLocalAdress = (results) => (results.find(result => result.types.includes('locality')))
 
-  errorLocating = () => {
-    console.log('FUCK')
+  errorLocating = (positionError) => {
+    console.log(positionError)
+    this.setState({lat: 39.7392358, lng: -104.990251})
+    this.handleSubmit()
   }
 
   handleChange = (e) => {
     const { name, value } = e.target
-    this.setState({
-      [name]: value
-    })
+    this.setState({[name]: value})
   }
 
   handleSearch = (e) => {
@@ -68,8 +66,7 @@ class Filter extends Component {
     })
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
+  handleSubmit = () => {
     getTrails(this.state)
     .then(results => this.props.setTrails(results.trails))
   }
@@ -77,9 +74,8 @@ class Filter extends Component {
   render() {
     const { sort, maxDistance, minStars, search, minLength} = this.state
     return(
-      <div className='filter'>
+      <form className='filter'>
         <input className='filter-options' name='search' value={search} onBlur={this.handleSearch} onChange={this.handleChange} type='text'/>
-        <form>
           <input className='filter-options' name='maxDistance' onChange={this.handleChange} value={maxDistance} type='number'/>
           <select className='filter-options' value={sort} name='sort' onChange={this.handleChange}>
             <option value='quality'>Quality</option>
@@ -94,9 +90,8 @@ class Filter extends Component {
             <option value={5}>5</option>
           </select>
           <input className='filter-options' name='minLength' onChange={this.handleChange} value={minLength} type='number'/>
-          <button onClick={(e) => this.handleSubmit(e)}>Update Results</button>
-        </form>
-      </div>
+          <div className='submit-btn' role='button' onClick={this.handleSubmit}>Update Results</div>
+      </form>
     )
   }
 }

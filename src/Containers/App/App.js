@@ -3,8 +3,7 @@ import './App.scss';
 import { Route } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar'
 import Results from '../Results/Results'
-import ExpandedPlant from '../ExpandedPlant/ExpandedPlant'
-
+import Filter from '../Filter/Filter'
 
 class App extends Component {
 
@@ -13,9 +12,9 @@ class App extends Component {
       <div className='content'>
         <Sidebar />
         <main>
+          <Route path='/' component={Filter} />
           <Results />
         </main>
-        <Route exact path='/plant/:id' component={ExpandedPlant} />
       </div>
     )
   }

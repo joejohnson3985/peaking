@@ -7,10 +7,18 @@ import Trail from '../Trail/Trail'
 class Results extends Component {
 
   displayTrails = () => {
-    if(this.props.trails) {
+    if(this.props.trails.length) {
       return this.props.trails.map(trail => <Trail {...trail} key={trail.id}/>)
     } else {
-      return <p>Just one more switchback...</p>
+      return (
+        <div className="load-container">
+          <div className="load">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      )
     }
   }
 

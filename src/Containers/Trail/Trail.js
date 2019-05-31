@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import './Trail.scss'
 import Ratings from 'react-ratings-declarative';
+import noPhoto from '../../Media/no-photo.png'
 
 class Trail extends Component {
 
 
   render() {
     const { name, difficulty, stars, starVotes, length, imgMedium } = this.props
+    const image = imgMedium || noPhoto
     const url = `https://cdn.apstatic.com/img/diff/${difficulty}.svg`
-    console.log(url)
-    const bg = {backgroundImage: `url(${imgMedium})`}
+    const bg = {backgroundImage: `url(${image})`}
     return(
       <div className='trail' style={bg}>
         <div className='data'>
