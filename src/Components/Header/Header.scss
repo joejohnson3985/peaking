@@ -1,0 +1,12 @@
+@import '../../Utilities/_Variables.scss';
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  width: 100%;
+  background-color: rgba(255,255,255, 0.6);
+  color: $primary;
+}

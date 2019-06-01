@@ -21,13 +21,6 @@
     cursor: pointer;
   }
 
-  & h4 {
-    background: rgba(255,255,255, 0.6);
-    padding: 5px 10px;
-    border-radius: 3px;
-    margin: 0;
-    margin-bottom: 5px; 
-  }
 }
 
 .widget-ratings {
@@ -36,7 +29,7 @@
 
 .data {
   display: flex;
-  background: white;
+  background: $text-bg;
   align-items: center;
   justify-content: space-around;
   width: 100%;
@@ -44,4 +37,28 @@
 
 .description {
   width: 100%;
+}
+
+.user-actions {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: 100%;
+  background-color: $text-bg;
+
+  div {
+    display: flex;
+    align-items: center;
+
+    i {
+      margin: 5px
+    }
+  }
+
+  .hiked {
+    justify-content: flex-end;
+  }
+
+  .trail-name {
+    justify-content: center;
+  }
 }

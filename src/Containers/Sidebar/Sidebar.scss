@@ -18,10 +18,8 @@ i {
 
 .bar {
   background: $light-text;
-  color: $dark-accent;
   text-align: center;
   width: 0;
-  z-index: 1;
   top: 0;
   left: 0;
   overflow-x: hidden;
@@ -39,6 +37,8 @@ i {
   h1 {
     font-size: 30px;
     margin: 0;
+    color: $primary;
+
   }
 }
 
@@ -46,4 +46,15 @@ i {
   width: 250px;
   padding: 20px;
   margin: 15px 0 0 15px;
+  z-index: 1;
+}
+
+.nav-link {
+  color: $primary;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.current-nav {
+  color: $secondary;
 }

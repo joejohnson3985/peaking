@@ -1,12 +1,64 @@
 import React, { Component } from 'react';
 import './Trail.scss'
 import Ratings from 'react-ratings-declarative';
-import noPhoto from '../../Media/no-photo.png'
+import noPhoto from '../../Media/no-photo.png';
 
 class Trail extends Component {
+  constructor() {
+    super()
+    this.state = {
+      hikeLater: false,
+      hiked: false
+    }
+  }
+
+  componentDidMount() {
+    this.checkState()
+  }
+
+  checkState = () => {
+    const trails = JSON.parse(localStorage.getItem('myHikes'))
+    const existing = trails.find(trail => this.props.id === trail.id)
+    if(existing) {
+      const { hikeLater, hiked } = existing
+      this.setState({hikeLater, hiked})
+    }
+  }
+
+  updateMyHikes = () => {
+    const { hikeLater, hiked } = this.state
+    const newTrail = {id: this.props.id, hikeLater, hiked}
+    const trails = JSON.parse(localStorage.getItem('myHikes'))
+    const existing = trails.find(trail => this.props.id === trail.id)
+    if(existing && !hikeLater && !hiked) {
+      let index = trails.indexOf(existing)
+      trails.splice(index, 1)
+    } else if(existing) {
+      let index = trails.indexOf(existing)
+      trails.splice(index, 1, newTrail)
+    } else {
+      trails.push(newTrail)
+    }
+    localStorage.setItem('myHikes', JSON.stringify(trails))
+  }
+
+  handleHiked = () => {
+    const {hiked} = this.state
+    this.setState({hiked: !hiked},  () => this.updateMyHikes())
+  }
+
+  handleHikeLater = () => {
+    const {hikeLater} = this.state
+    this.setState({hikeLater: !hikeLater}, () => this.updateMyHikes())
+  }
+
+  displayChecks = (value) => {
+    return value ? <i className='far fa-check-square'></i> : <i className='far fa-square'></i>
+  }
 
 
   render() {
+    const { hiked, hikeLater } = this.state
     const { name, difficulty, stars, starVotes, length, imgMedium } = this.props
     const image = imgMedium || noPhoto
     const url = `https://cdn.apstatic.com/img/diff/${difficulty}.svg`
@@ -25,7 +77,19 @@ class Trail extends Component {
           <p>{length} miles</p>
           <img src={url} alt={difficulty}/>
         </div>
-        <h4>{name}</h4>
+        <div className='user-actions'>
+          <div onClick={this.handleHikeLater} className='hike-later'>
+            {this.displayChecks(hikeLater)}
+            <label >Hike Later</label>
+          </div>
+          <div className='trail-name'>
+            {name}
+          </div>
+          <div onClick={this.handleHiked} className='hiked'>
+            <label onClick={this.handleHiked}>Hiked</label>
+            {this.displayChecks(hiked)}
+          </div>
+        </div>
       </div>
     )
   }
