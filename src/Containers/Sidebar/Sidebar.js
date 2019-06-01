@@ -29,8 +29,7 @@ class Sidebar extends Component {
             <i className='fas fa-times' onClick={this.showSidebar}></i>
             <h1>Peaking</h1>
             <NavLink exact={true} to="/search" activeClassName='current-nav' className='nav-link' onClick={this.showSidebar} ><h4>Find Hikes</h4></NavLink>
-            <NavLink exact={true} to="/user/future-hikes" activeClassName='current-nav' className='nav-link' onClick={this.showSidebar} ><h4>Future Hikes</h4></NavLink>
-            <NavLink exact={true} to="/user/completed-hikes" activeClassName='current-nav' className='nav-link' onClick={this.showSidebar} ><h4>Completed Hikes</h4></NavLink>
+            <NavLink exact={true} to="/my-hikes" activeClassName='current-nav' className='nav-link' onClick={this.showSidebar} ><h4>My Hikes</h4></NavLink>
           </div>
         </div>
       </div>

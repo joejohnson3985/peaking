@@ -9,4 +9,18 @@
   width: 100%;
   background-color: rgba(255,255,255, 0.6);
   color: $primary;
+
+  .overlay {
+    @include popup;
+    background-color: rgba(33,33,33, 0.9);
+    width: 100vw;
+    height: 190vh;
+
+    .popup {
+      padding: 30px 50px;
+      margin-top: 50%;
+      border: 2px solid black;
+      color: white;
+    }
+  }
 }

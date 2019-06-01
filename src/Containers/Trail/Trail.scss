@@ -2,9 +2,11 @@
 
 .trail {
   transition: box-shadow .3s;
+  text-decoration: none;
+  color: $dark-text;
   margin: 10px auto;
   width: 44%;
-  min-height: 250px;
+  min-height: 350px;
   max-height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
