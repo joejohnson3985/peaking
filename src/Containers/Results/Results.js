@@ -6,9 +6,10 @@ import Trail from '../Trail/Trail'
 
 class Results extends Component {
 
+
   displayTrails = () => {
     if(this.props.trails.length) {
-      return this.props.trails.map(trail => <Trail {...trail} key={trail.id}/>)
+      return this.props.trails.map(trail => <Trail {...trail} key={trail.id} expandTrail={this.expandTrail}/>)
     } else {
       return (
         <div className="load-container">
@@ -17,6 +18,7 @@ class Results extends Component {
             <span></span>
             <span></span>
           </div>
+          <p>Loading hikes...</p>
         </div>
       )
     }

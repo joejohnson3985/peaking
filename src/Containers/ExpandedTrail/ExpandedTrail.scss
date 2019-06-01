@@ -1,0 +1,14 @@
+@import '../../Utilities/_Variables.scss';
+
+.expanded-trail {
+  background: $dark-accent;
+  width: 60%;
+  height: 50%;
+  z-index: 6;
+}
+
+.trail-overlay{
+  @include popup
+  background-color: $text-bg;
+  height: 90vh;
+}

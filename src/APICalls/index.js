@@ -34,5 +34,16 @@ export const getCurrentLocationName = location => {
     }
     return response.json();
   })
+}
+
+export const getMyHikes = (ids) => {
+  const base = 'https://www.hikingproject.com/data/get-trails-by-id?'
+  const url = `${base}ids=${ids}&key=${hpapikey}`
+  return fetch(url).then(response => {
+    if(!response.ok) {
+      throw new Error('Error fetching your hikes.')
+    }
+    return response.json()
+  })
 }  
 

@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import './Trail.scss'
 import Ratings from 'react-ratings-declarative';
 import noPhoto from '../../Media/no-photo.png';
+import { NavLink } from 'react-router-dom';
 
 class Trail extends Component {
   constructor() {
     super()
     this.state = {
       hikeLater: false,
-      hiked: false
+      hiked: false,
+      expand: {}
     }
   }
 
@@ -57,14 +59,16 @@ class Trail extends Component {
   }
 
 
+
   render() {
     const { hiked, hikeLater } = this.state
-    const { name, difficulty, stars, starVotes, length, imgMedium } = this.props
+    const {name, difficulty, stars, starVotes, length, imgMedium, id} = this.props
     const image = imgMedium || noPhoto
-    const url = `https://cdn.apstatic.com/img/diff/${difficulty}.svg`
+    const imgUrl = `https://cdn.apstatic.com/img/diff/${difficulty}.svg`
+    const routeUrl = `/trail/${id}`
     const bg = {backgroundImage: `url(${image})`}
     return(
-      <div className='trail' style={bg}>
+      <div to={routeUrl} className='trail' style={bg}>
         <div className='data'>
           <p>{stars}</p>
           <Ratings rating={stars} widgetRatedColors='#df7975' title={starVotes}>
@@ -75,8 +79,9 @@ class Trail extends Component {
             <Ratings.Widget widgetDimension="25px"/>
           </Ratings>
           <p>{length} miles</p>
-          <img src={url} alt={difficulty}/>
+          <img src={imgUrl} alt={difficulty}/>
         </div>
+          <NavLink to={routeUrl}>More Info</NavLink>
         <div className='user-actions'>
           <div onClick={this.handleHikeLater} className='hike-later'>
             {this.displayChecks(hikeLater)}
@@ -94,5 +99,6 @@ class Trail extends Component {
     )
   }
 }
+
 
 export default Trail;

@@ -27,7 +27,7 @@ class Filter extends Component {
     const success = this.setCurrentLocation
     const error = this.errorLocating
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success, error )
+      navigator.geolocation.getCurrentPosition(success, error)
     } else {
       console.log('not working');
     }
