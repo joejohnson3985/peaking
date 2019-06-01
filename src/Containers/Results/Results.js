@@ -14,14 +14,15 @@ class Results extends Component {
 
   componentDidMount() {
     let source = this.checkSource()
+    console.log(source)
   }
 
   checkSource = () => {
     switch (window.location.href) {
       case 'http://localhost:3000/user/future-hikes':
-        return <p>Hikes you would like to do</p>
+        return JSON.parse(localStorage.getItem('hikeLater'))
       case 'http://localhost:3000/user/completed-hikes':
-        return <p>Hikes you have already done</p>
+        return '<p>Hikes you have already done</p>'
       default:
         return this.props.trails;
     }

@@ -4,11 +4,39 @@ import Ratings from 'react-ratings-declarative';
 import noPhoto from '../../Media/no-photo.png'
 
 class Trail extends Component {
+  constructor() {
+    super()
+    this.state = {
+      hikeLater: false,
+      hiked: false
+    }
+  }
 
-  hikeLater = () => {
-    let trails = JSON.parse(localStorage.getItem('hikeLater'))
-    trails.push(this.props.id)
-    localStorage.setItem('hikeLater', JSON.stringify(trails))
+  updateMyHikes = () => {
+    const { hikeLater, hiked } = this.state
+    const newTrail = {id: this.props.id, hikeLater, hiked}
+    const trails = JSON.parse(localStorage.getItem('myHikes'))
+    const existing = trails.find(trail => this.props.id === trail.id)
+    if(existing && !hikeLater && !hiked) {
+      let index = trails.indexOf(existing)
+      trails.splice(index, 1)
+    } else if(existing) {
+      let index = trails.indexOf(existing)
+      trails.splice(index, 1, newTrail)
+    } else {
+      trails.push(newTrail)
+    }
+    localStorage.setItem('myHikes', JSON.stringify(trails))
+  }
+
+  handleHiked = () => {
+    const {hikeLater, hiked} = this.state
+    this.setState({hikeLater: !hikeLater, hiked: !hiked},  () => this.updateMyHikes())
+  }
+
+  handleHikeLater = () => {
+    const {hikeLater} = this.state
+    this.setState({hikeLater: !hikeLater}, () => this.updateMyHikes())
   }
 
 
@@ -31,8 +59,9 @@ class Trail extends Component {
           <p>{length} miles</p>
           <img src={url} alt={difficulty}/>
         </div>
-        <h4>{name}</h4>
-        <div onClick={this.hikeLater}>hikeLater</div>
+        <h4>{name}</h4> 
+        <div onClick={this.handleHikeLater}>Hike Later</div>
+        <div onClick={this.handleHiked}>Hiked</div>
       </div>
     )
   }

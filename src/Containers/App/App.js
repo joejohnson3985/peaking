@@ -9,8 +9,8 @@ import Header from '../../Components/Header/Header'
 class App extends Component {
 
   componentDidMount() {
-    if(!localStorage.getItem('hikeLater')) {
-      localStorage.setItem('hikeLater', JSON.stringify([]))
+    if(!localStorage.getItem('myHikes')) {
+      localStorage.setItem('myHikes', JSON.stringify([]))
     }
   }
 
@@ -24,7 +24,9 @@ class App extends Component {
             <Route exact path='/search' component={Filter} />
             <Route path='/user/' component={Header} />
           </Switch>
-          <Results/>
+          <Route exact path='/search' component={Results} />
+          <Route exact path='/user/future-hikes' component={Results} />
+          <Route exact path='/user/completed-hikes' component={Results} />
         </main>
       </div>
     )
