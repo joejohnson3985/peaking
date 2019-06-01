@@ -68,7 +68,7 @@ class ExpandedTrail extends Component {
               <p>{summary}</p>
             </article>
             <article>
-              <a href={url} target="_blank">
+              <a href={url} target="_blank"  rel="noopener noreferrer">
                 <button >
                   REI
                 </button>
