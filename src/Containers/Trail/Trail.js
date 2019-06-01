@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Trail.scss'
 import Ratings from 'react-ratings-declarative';
-import noPhoto from '../../Media/no-photo.png'
+import noPhoto from '../../Media/no-photo.png';
 
 class Trail extends Component {
   constructor() {
@@ -44,7 +44,7 @@ class Trail extends Component {
 
   handleHiked = () => {
     const {hikeLater, hiked} = this.state
-    this.setState({hikeLater: !hikeLater, hiked: !hiked},  () => this.updateMyHikes())
+    this.setState({hiked: !hiked},  () => this.updateMyHikes())
   }
 
   handleHikeLater = () => {
@@ -52,8 +52,13 @@ class Trail extends Component {
     this.setState({hikeLater: !hikeLater}, () => this.updateMyHikes())
   }
 
+  displayChecks = (value) => {
+    return value ? <i className='far fa-check-square'></i> : <i className='far fa-square'></i>
+  }
+
 
   render() {
+    const { hiked, hikeLater } = this.state
     const { name, difficulty, stars, starVotes, length, imgMedium } = this.props
     const image = imgMedium || noPhoto
     const url = `https://cdn.apstatic.com/img/diff/${difficulty}.svg`
@@ -72,9 +77,15 @@ class Trail extends Component {
           <p>{length} miles</p>
           <img src={url} alt={difficulty}/>
         </div>
-        <h4>{name}</h4> 
-        <div onClick={this.handleHikeLater}>Hike Later</div>
-        <div onClick={this.handleHiked}>Hiked</div>
+        <h4>{name}</h4>
+        <div onClick={this.handleHikeLater}>
+          {this.displayChecks(hikeLater)}
+          <label >Hike Later</label>
+        </div>
+        <div onClick={this.handleHiked}>
+          {this.displayChecks(hiked)}
+          <label onClick={this.handleHiked}>Hiked</label>
+        </div>
       </div>
     )
   }
