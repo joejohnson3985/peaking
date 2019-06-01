@@ -62,9 +62,9 @@ class Header extends Component {
     return (
       <div className='header'>
         {whatToRender}
-        <h1>My Hikes</h1>
-        <p onClick={this.getHikedTrails}>hiked</p>
-        <p onClick={this.getFutureTrails}>Hike Later</p>
+        <NavLink exact={true} to='/my-hikes/completed-hiked' className='nav-link' activeClassName='current-nav' onClick={this.getHikedTrails}>Hiked</NavLink>
+        <NavLink exact={true} to='/my-hikes/' className='nav-link' activeClassName='current-nav' onClick={this.fetchAllMyHikes}>My Hikes</NavLink>
+        <NavLink exact={true} to='/my-hikes/hike-later' className='nav-link' activeClassName='current-nav' onClick={this.getFutureTrails}>Hike Later</NavLink>
       </div>
     )
   }

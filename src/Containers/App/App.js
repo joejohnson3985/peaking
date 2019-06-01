@@ -23,11 +23,11 @@ class App extends Component {
           <Switch>
             <Redirect exact from="/" to="/search" />
             <Route exact path='/search' component={Filter} />
-            <Route exact path='/my-hikes' component={Header} />
+            <Route path='/my-hikes' component={Header} />
             <Route path='/trail/:id' component={ExpandedTrail} />
           </Switch>
           <Route exact path='/search' component={Results} />
-          <Route exact path='/my-hikes' component={Results} />
+          <Route path='/my-hikes' component={Results} />
         </main>
       </div>
     )
