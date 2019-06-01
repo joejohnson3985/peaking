@@ -43,7 +43,7 @@ class Trail extends Component {
   }
 
   handleHiked = () => {
-    const {hikeLater, hiked} = this.state
+    const {hiked} = this.state
     this.setState({hiked: !hiked},  () => this.updateMyHikes())
   }
 
@@ -77,14 +77,18 @@ class Trail extends Component {
           <p>{length} miles</p>
           <img src={url} alt={difficulty}/>
         </div>
-        <h4>{name}</h4>
-        <div onClick={this.handleHikeLater}>
-          {this.displayChecks(hikeLater)}
-          <label >Hike Later</label>
-        </div>
-        <div onClick={this.handleHiked}>
-          {this.displayChecks(hiked)}
-          <label onClick={this.handleHiked}>Hiked</label>
+        <div className='user-actions'>
+          <div onClick={this.handleHikeLater} className='hike-later'>
+            {this.displayChecks(hikeLater)}
+            <label >Hike Later</label>
+          </div>
+          <div className='trail-name'>
+            {name}
+          </div>
+          <div onClick={this.handleHiked} className='hiked'>
+            <label onClick={this.handleHiked}>Hiked</label>
+            {this.displayChecks(hiked)}
+          </div>
         </div>
       </div>
     )

@@ -14,6 +14,10 @@ class Sidebar extends Component {
     this.setState({showNav: !this.state.showNav})
   }
 
+  changeSource = () => {
+    
+  }
+  
   render() {
     let css = 'bar';
     if(this.state.showNav) {css = 'bar show-nav' }
