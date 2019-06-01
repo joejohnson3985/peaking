@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-// import Ratings from 'react-ratings-declarative';
-// import noPhoto from '../../Media/no-photo.png';
+import Ratings from 'react-ratings-declarative';
+import noPhoto from '../../Media/no-photo.png';
 import './ExpandedTrail.scss'
 import { getMyHikes} from '../../APICalls'
+
 
 class ExpandedTrail extends Component {
   constructor() {
@@ -24,17 +25,57 @@ class ExpandedTrail extends Component {
   }  
 
   render() {
-    const { name, difficulty, stars, starVotes, length, imgMedium, expandTrail } = this.state.trail
+    console.log(this.state.trail)
+    const { name, difficulty, stars, starVotes, length, imgMedium, summary, conditionStatus, conditionDetails, conditionDate, low, ascent, descent, high, url } = this.state.trail
+    const image = imgMedium || noPhoto
+    const bg = {backgroundImage: `url(${image})`}
+    const diff = `https://cdn.apstatic.com/img/diff/${difficulty}.svg`
     return (
       <div className='trail-overlay'>
         <div className='expanded-trail'>
-          <p>{name}</p>
-          <p>{stars}</p>
-          <p>{difficulty}</p>
-          <p>{starVotes}</p>
-          <p>{length}</p>
-          <img src={imgMedium}/>
-          <button onClick={() => this.handleClick()}>x</button>
+          <section className='main-img' style={bg}>
+            <article className='img-overlay'>
+              <h1>{name}</h1>
+              <Ratings rating={stars} widgetRatedColors='#df7975' title={starVotes}>
+                <Ratings.Widget widgetDimension="25px"/>
+                <Ratings.Widget widgetDimension="25px"/>
+                <Ratings.Widget widgetDimension="25px"/>
+                <Ratings.Widget widgetDimension="25px"/>
+                <Ratings.Widget widgetDimension="25px"/>
+              </Ratings>
+            </article>
+          </section>
+          <section className='trail-description'>
+            <article className='basic-info'>
+              <img src={diff} alt={difficulty}/>
+              <p>{stars} stars from {starVotes} votes</p>
+              <p>{length} miles</p>
+            </article> 
+            <article className='condition-elevation'>
+              <div>
+                <p>Condition: {conditionStatus}.</p>
+                <p>Details: {conditionDetails}.</p>
+                <p>Date: {conditionDate}.</p>
+              </div>
+              <div>
+                <p>Ascent: {ascent} ft.</p>
+                <p>Descent: {descent} ft.</p>
+                <p>Highest Point: {high} ft.</p>
+                <p>Lowest Point: {low} ft.</p>
+              </div>
+            </article> 
+            <article>
+              <p>{summary}</p>
+            </article>
+            <article>
+              <a href={url} target="_blank">
+                <button >
+                  REI
+                </button>
+              </a>
+              <button onClick={() => this.handleClick()}>x</button>
+            </article>          
+          </section>
         </div>
       </div>
     )

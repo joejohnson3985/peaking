@@ -23,7 +23,7 @@ i {
   top: 0;
   left: 0;
   overflow-x: hidden;
-  transition: 0.7s;
+  transition: 0.5s;
   position: fixed;
   box-shadow: 0 0 11px rgba(33,33,33,.6);
 
@@ -53,6 +53,10 @@ i {
   color: $primary;
   text-decoration: none;
   font-size: 24px;
+
+  &:hover {
+    color: $secondary;
+  }
 }
 
 .current-nav {

@@ -1,14 +1,73 @@
 @import '../../Utilities/_Variables.scss';
 
 .expanded-trail {
-  background: $dark-accent;
-  width: 60%;
-  height: 50%;
+  background: $text-bg;
+  width: 85%;
+  height: 70%;
   z-index: 6;
+  display: flex;
+  box-shadow: $heavy-card-shadow;
+  border-radius: 4px;
+
 }
 
 .trail-overlay{
   @include popup
   background-color: $text-bg;
   height: 90vh;
+}
+
+.img-overlay {
+  background-color: $text-bg;
+  height: 65%;
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.main-img {
+  height: 100%;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widget-ratings {
+  width: 100%;
+  text-align: center;
+} 
+
+.trail-description {
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  article {
+    width: 100%;
+  }
+}
+
+.basic-info {
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+} 
+
+.condition-elevation {
+  display: flex;
+
+  div {
+    width: 50%;
+    text-align: center;
+  }
 }

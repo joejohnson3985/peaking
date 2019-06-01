@@ -8,6 +8,8 @@ $light-primary: #E8EADC;
 $text-bg: rgba(255,255,255, 0.8);
 $spinner-size: 2rem;
 $animation-speed: 1.2s;
+$heavy-card-shadow: 0 0 11px rgba(33,33,33,.6);
+
 
 @mixin center-flex {
   display: flex;
