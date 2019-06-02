@@ -3,7 +3,7 @@
 .expanded-trail {
   background: $text-bg;
   width: 85%;
-  height: 70%;
+  height: 60%;
   z-index: 6;
   display: flex;
   box-shadow: $heavy-card-shadow;
@@ -31,7 +31,7 @@
 
 .main-img {
   height: 100%;
-  width: 50%;
+  width: 40%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -47,7 +47,7 @@
 
 .trail-description {
   padding: 10px;
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -65,9 +65,22 @@
 
 .condition-elevation {
   display: flex;
+  align-items: center;
 
   div {
     width: 50%;
     text-align: center;
+    margin: 5px;
+    border: 1px solid $dark-accent;
+    padding: 10px;
+
+
+    table {
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+    }
   }
 }

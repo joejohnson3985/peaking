@@ -50,20 +50,51 @@ class ExpandedTrail extends Component {
               <img src={diff} alt={difficulty}/>
               <p>{stars} stars from {starVotes} votes</p>
               <p>{length} miles</p>
-            </article> 
+            </article>
             <article className='condition-elevation'>
               <div>
-                <p>Condition: {conditionStatus}.</p>
-                <p>Details: {conditionDetails}.</p>
-                <p>Date: {conditionDate}.</p>
+                <h1>Conditions</h1>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Condition:</td>
+                      <td>{conditionStatus}</td>
+                    </tr>
+                    <tr>
+                      <td>Details:</td>
+                      <td>{conditionDetails}</td>
+                    </tr>
+                    <tr>
+                      <td>Date:</td>
+                      <td>{conditionDate}.</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
               <div>
-                <p>Ascent: {ascent} ft.</p>
-                <p>Descent: {descent} ft.</p>
-                <p>Highest Point: {high} ft.</p>
-                <p>Lowest Point: {low} ft.</p>
+                <h1>Elevation</h1>
+                <table>
+                  <tbody>
+                    <tr> 
+                      <td>Ascent</td>
+                      <td>{ascent} ft.</td>
+                    </tr>
+                    <tr>
+                      <td>Descent:</td>
+                      <td>{descent} ft.</td>
+                    </tr>
+                    <tr>
+                      <td>Highest Point:</td>
+                      <td>{high} ft.</td>
+                    </tr>
+                    <tr>
+                      <td>Lowest Point:</td>
+                      <td>{low} ft.</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </article> 
+            </article>
             <article>
               <p>{summary}</p>
             </article>
