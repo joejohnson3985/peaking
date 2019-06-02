@@ -37,13 +37,14 @@ class Filter extends Component {
     const { latitude, longitude } = pos.coords
     getCurrentLocationName({lat: latitude, lng: longitude})
       .then(query => this.findLocalAdress(query.results))
-      .then(address => this.setState({search: address.formatted_address, lat: latitude, lng: longitude}, () => {
-        this.handleSubmit()
+      .then(address =>  {
+        this.setState({search: address.formatted_address || null, lat: latitude, lng: longitude}, () => {
+          this.handleSubmit()
         }
-      ))
+      )})
   }
 
-  findLocalAdress = (results) => (results.find(result => result.types.includes('locality')))
+  findLocalAdress = (results) => (results.find(result =>result.types.includes('political')))
 
   errorLocating = (positionError) => {
     console.log(positionError)
