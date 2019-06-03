@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Results.scss'
 import { connect } from 'react-redux';
 import Trail from '../Trail/Trail'
+import Stats from '../Stats/Stats'
 
 
 class Results extends Component {
@@ -18,16 +19,20 @@ class Results extends Component {
             <span></span>
             <span></span>
           </div>
-          <p>Loading hikes...</p>
+          <h1>Loading hikes...</h1>
         </div>
       )
     }
   }
 
   render() {
+    console.log('hello')
     return(
-      <div className='results'>
-        {this.displayTrails()}
+      <div>
+        <Stats />
+        <div className='results'>
+          {this.displayTrails()}
+        </div>
       </div>
     )
   }

@@ -38,7 +38,7 @@ class Filter extends Component {
     getCurrentLocationName({lat: latitude, lng: longitude})
       .then(query => this.findLocalAdress(query.results))
       .then(address =>  {
-        this.setState({search: address.formatted_address || null, lat: latitude, lng: longitude}, () => {
+        this.setState({search: address.formatted_address, lat: latitude, lng: longitude}, () => {
           this.handleSubmit()
         }
       )})
