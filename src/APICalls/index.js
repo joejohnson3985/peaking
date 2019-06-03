@@ -2,9 +2,9 @@ import { hpapikey, gmapikey } from '../apikey.js';
 
 
 export const getTrails = filters => {
-  const { lat, lng, maxDistance, minStars, maxResults, sort } = filters
+  const { lat, lng, maxDistance, minStars, maxResults, sort, minLength } = filters
   const base = 'https://www.hikingproject.com/data/get-trails?'
-  const url = `${base}lat=${lat}&lon=${lng}&maxDistance=${maxDistance}&key=${hpapikey}&minStars=${minStars}&maxResults=${maxResults}&sort=${sort}`
+  const url = `${base}lat=${lat}&lon=${lng}&maxDistance=${maxDistance}&key=${hpapikey}&minStars=${minStars}&maxResults=${maxResults}&sort=${sort}&minLength=${minLength}`
   return fetch(url).then(response => {
     if (!response.ok) {
       throw new Error('Error fetching trails!');
