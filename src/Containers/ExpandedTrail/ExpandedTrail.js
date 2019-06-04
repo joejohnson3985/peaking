@@ -25,7 +25,6 @@ class ExpandedTrail extends Component {
   }  
 
   render() {
-    console.log(this.state.trail)
     const { name, difficulty, stars, starVotes, length, imgMedium, summary, conditionStatus, conditionDetails, conditionDate, low, ascent, descent, high, url } = this.state.trail
     const image = imgMedium || noPhoto
     const bg = {backgroundImage: `url(${image})`}

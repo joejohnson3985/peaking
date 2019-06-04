@@ -24,8 +24,9 @@
     .popup {
       padding: 30px 50px;
       margin-top: 50%;
-      border: 2px solid black;
-      color: white;
+      border: 2px solid $primary;
+      background: $text-bg;
+      color: $primary;
     }
   }
 }

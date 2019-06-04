@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Filter.scss'
 import { getTrails, getSearchedTrails, getCurrentLocationName } from '../../APICalls'
-import { setTrails } from '../../Actions';
+import { setTrails, setLoading, setError } from '../../Actions';
 import { connect } from 'react-redux';
 
 class Filter extends Component {
@@ -24,12 +24,11 @@ class Filter extends Component {
   }
 
   getLocation = () => {
+    this.props.setLoading(true)
     const success = this.setCurrentLocation
     const error = this.errorLocating
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success, error)
-    } else {
-      console.log('not working');
     }
   }
 
@@ -42,14 +41,19 @@ class Filter extends Component {
           this.handleSubmit()
         }
       )})
+      .catch(error => {
+        this.handleSubmit()
+        this.props.setError(error.message)
+      })
   }
 
-  findLocalAdress = (results) => (results.find(result =>result.types.includes('political')))
+  findLocalAdress = (results) => (results.find(result => result.types.includes('political')))
 
   errorLocating = (positionError) => {
-    console.log(positionError)
-    this.setState({lat: 39.7392358, lng: -104.990251})
-    this.handleSubmit()
+    let errorMessage = `${positionError.message}. Default location is Denver, Colarado.`
+    this.props.setError(errorMessage)
+    let pos = {coords: {latitude: 39.7392358, longitude: -104.990251}}
+    this.setCurrentLocation(pos)
   }
 
   handleChange = (e) => {
@@ -70,6 +74,8 @@ class Filter extends Component {
   handleSubmit = () => {
     getTrails(this.state)
     .then(results => this.props.setTrails(results.trails))
+    .then(results => this.props.setLoading(false))
+    .catch(error => this.props.setError(error.message))
   }
 
   render() {
@@ -114,6 +120,8 @@ class Filter extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   setTrails: trails => dispatch(setTrails(trails)),
+  setLoading: bool => dispatch(setLoading(bool)),
+  setError: error => dispatch(setError(error))
 });
 
 export default connect(null, mapDispatchToProps)(Filter);

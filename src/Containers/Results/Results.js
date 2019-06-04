@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import './Results.scss'
 import { connect } from 'react-redux';
 import Trail from '../Trail/Trail'
-import Stats from '../Stats/Stats'
 
 
 class Results extends Component {
 
 
   displayTrails = () => {
-    if(this.props.trails.length) {
+    if(!this.props.isLoading) {
       return this.props.trails.map(trail => <Trail {...trail} key={trail.id} expandTrail={this.expandTrail}/>)
     } else {
       return (
@@ -19,17 +18,15 @@ class Results extends Component {
             <span></span>
             <span></span>
           </div>
-          <h1>Loading hikes...</h1>
+          <h1>Loading Hikes</h1>
         </div>
       )
     }
   }
 
   render() {
-    console.log('hello')
     return(
       <div>
-        <Stats />
         <div className='results'>
           {this.displayTrails()}
         </div>
@@ -39,7 +36,8 @@ class Results extends Component {
 }
 
 export const mapStateToProps = state => ({
-  trails: state.trails
+  trails: state.trails,
+  isLoading: state.isLoading
 })
 
 export default connect(mapStateToProps)(Results);

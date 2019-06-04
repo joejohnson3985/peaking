@@ -16,10 +16,10 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    this.fetchAllMyHikes()
+    this.getAllMyHikes()
   }
 
-  fetchAllMyHikes = () => {
+  getAllMyHikes = () => {
     const {trails} = this.state
     const ids = trails.map(trail => trail.id)
     this.setState({ids})

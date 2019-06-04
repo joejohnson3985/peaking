@@ -6,6 +6,9 @@ import Results from '../Results/Results'
 import Filter from '../Filter/Filter'
 import Header from '../../Components/Header/Header'
 import ExpandedTrail from '../ExpandedTrail/ExpandedTrail'
+import Stats from '../Stats/Stats'
+import ErrorDisplay from '../ErrorDisplay/ErrorDisplay'
+
 
 class App extends Component {
 
@@ -19,6 +22,7 @@ class App extends Component {
     return(
       <div className='content'>
         <Sidebar />
+        <ErrorDisplay />
         <main>
           <Switch>
             <Redirect exact from="/" to="/search" />
@@ -26,6 +30,7 @@ class App extends Component {
             <Route path='/my-hikes' component={Header} />
             <Route path='/trail/:id' component={ExpandedTrail} />
           </Switch>
+          <Route path='/my-hikes' component={Stats}/>
           <Route exact path='/search' component={Results} />
           <Route path='/my-hikes' component={Results} />
         </main>
