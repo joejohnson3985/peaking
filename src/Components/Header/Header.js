@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 
-class Header extends Component {
+export class Header extends Component {
   constructor() {
     super()
     this.state = {
       ids: [],
-      trails: JSON.parse(localStorage.getItem('myHikes'))
+      trails: JSON.parse(localStorage.getItem('myHikes')) || []
     }
   }
 
@@ -42,6 +42,8 @@ class Header extends Component {
   getTrails = (ids) => {
     getMyHikes(ids)
     .then(results => this.props.setTrails(results.trails))
+    .catch(error => console.log(error))
+
   }
 
   render() {
@@ -70,7 +72,7 @@ class Header extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setTrails: trails => dispatch(setTrails(trails))
 })
 

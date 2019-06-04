@@ -1,10 +1,14 @@
 import React from 'react';
-import {Results, mapStateToProps} from './Results';
+import {Header, mapDispatchToProps} from './Header';
 import { shallow } from 'enzyme';
+import { setTrails } from '../../Actions';
+import { getMyHikes } from '../../APICalls'
 
-describe('Results', () => {
-    let wrapper;
-    let mockTrails = [
+
+describe('Header', () => {
+
+  let wrapper;
+  let mockTrails = [
       {
         "id": 7000130,
         "name": "Bear Peak Out and Back",
@@ -28,7 +32,9 @@ describe('Results', () => {
         "latitude": 39.9787,
         "conditionStatus": "All Clear",
         "conditionDetails": "Mostly Dry: All dry. A few places of the hike have small streams flowing through the path but nothing too extreme. Rain = mud tho.  ",
-        "conditionDate": "2019-06-04 13:38:04"
+        "conditionDate": "2019-06-04 13:38:04",
+        "hiked": true,
+        "hikeLater": false
       },
       {
         "id": 7004226,
@@ -53,40 +59,77 @@ describe('Results', () => {
         "latitude": 40.02,
         "conditionStatus": "All Clear",
         "conditionDetails": "A little wet in places but clear overall",
-        "conditionDate": "2019-05-29 12:06:52"
+        "conditionDate": "2019-05-29 12:06:52",
+        "hiked": false,
+        "hikeLater": true
       }
     ]
-  describe('Component', () => {
+  beforeEach(() => {
+    wrapper = shallow(
+      <Header />
+    )
+  })
+  describe('component', () => {
 
-    it('Should match the snapshot when isLoading is false', () => {
-      wrapper = shallow(
-        <Results
-          trails={mockTrails}
-          isLoading={false}
-        />
-      )
+    it('Should match the snapshot when trails is empty', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('Should match the snapshot when isLoading is true', () => {
-      wrapper = shallow(
-        <Results
-          trails={mockTrails}
-          isLoading={true}
-        />
-      )
-      expect(wrapper).toMatchSnapshot();
+    it('Should match the snapshot when trails has trails', () => {
+      wrapper.state().trails = mockTrails
+      expect(wrapper).toMatchSnapshot()
     })
 
-
+    it('Should have a defualt state', () => {
+      expect(wrapper.state()).toEqual({ids: [], trails: []})
+    })
   })
 
-  describe('mapStateToProps', () => {
-    it('Should have a mapped state prop', () => {
-      let mockState = {trails: [], isLoading: false, errorMessage: '',}
-      let expected = {trails: [], isLoading: false}
-      const result = mapStateToProps(mockState)
-      expect(result).toEqual(expected)
+  describe('methods', () => {
+    beforeEach(() => {
+      wrapper.state().trails = mockTrails
+      expect(wrapper.state().ids).toEqual([])
+    })
+
+    it('Should set state of ids when getAllHikes is called', () => {
+      wrapper.instance().getAllMyHikes()
+      expect(wrapper.state().ids).toEqual([7000130, 7004226])
+    })
+
+    it('Should set state of ids when getHikedTrails is called', () => {
+      wrapper.instance().getHikedTrails()
+      expect(wrapper.state().ids).toEqual([7000130])
+    })
+
+    it('Should set state of ids when getAllHikes is called', () => {
+      wrapper.instance().getFutureTrails()
+      expect(wrapper.state().ids).toEqual([7004226])
+    })
+  })
+
+  describe('getTrails', () => {
+    let ids, mockSetTrails
+    beforeEach(() => {
+      ids = [7000130, 7004226]
+      mockSetTrails = jest.fn()
+      wrapper = shallow(
+        <Header setTrails={mockTrails}/>
+      )
+    })
+
+    it.skip('Should call getMyHikes when getTrails is called', () => {
+      wrapper.instance().getTrails(ids)
+      expect(getMyHikes).toHaveBeenCalledWith(ids)
+    })
+  })
+
+  describe('mapDispatchToProps', () => {
+    it('Should call setTrails with correct params', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = setTrails(mockTrails)
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.setTrails(mockTrails)
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
   })
 })

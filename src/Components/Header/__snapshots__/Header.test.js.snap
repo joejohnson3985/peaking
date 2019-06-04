@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Should match the snapshot when trails has trails 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="overlay"
+  >
+    <div
+      className="popup"
+    >
+      <p>
+        You do not have any hikes saved yet, go find some hikes!
+      </p>
+      <NavLink
+        activeClassName="current-nav"
+        className="nav-link"
+        to="/search"
+      >
+        <h4>
+          Find Hikes
+        </h4>
+      </NavLink>
+    </div>
+  </div>
+  <NavLink
+    activeClassName="current-nav"
+    className="nav-link"
+    exact={true}
+    onClick={[Function]}
+    to="/my-hikes/completed-hiked"
+  >
+    Hiked
+  </NavLink>
+  <NavLink
+    activeClassName="current-nav"
+    className="nav-link"
+    exact={true}
+    to="/my-hikes/"
+  >
+    My Hikes
+  </NavLink>
+  <NavLink
+    activeClassName="current-nav"
+    className="nav-link"
+    exact={true}
+    onClick={[Function]}
+    to="/my-hikes/hike-later"
+  >
+    Hike Later
+  </NavLink>
+</div>
+`;
+
+exports[`Header component Should match the snapshot when trails is empty 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="overlay"
+  >
+    <div
+      className="popup"
+    >
+      <p>
+        You do not have any hikes saved yet, go find some hikes!
+      </p>
+      <NavLink
+        activeClassName="current-nav"
+        className="nav-link"
+        to="/search"
+      >
+        <h4>
+          Find Hikes
+        </h4>
+      </NavLink>
+    </div>
+  </div>
+  <NavLink
+    activeClassName="current-nav"
+    className="nav-link"
+    exact={true}
+    onClick={[Function]}
+    to="/my-hikes/completed-hiked"
+  >
+    Hiked
+  </NavLink>
+  <NavLink
+    activeClassName="current-nav"
+    className="nav-link"
+    exact={true}
+    to="/my-hikes/"
+  >
+    My Hikes
+  </NavLink>
+  <NavLink
+    activeClassName="current-nav"
+    className="nav-link"
+    exact={true}
+    onClick={[Function]}
+    to="/my-hikes/hike-later"
+  >
+    Hike Later
+  </NavLink>
+</div>
+`;

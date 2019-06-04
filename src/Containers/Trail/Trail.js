@@ -19,7 +19,7 @@ class Trail extends Component {
   }
 
   checkState = () => {
-    const trails = JSON.parse(localStorage.getItem('myHikes'))
+    const trails = JSON.parse(localStorage.getItem('myHikes')) || []
     const existing = trails.find(trail => this.props.id === trail.id)
     if(existing) {
       const { hikeLater, hiked } = existing
@@ -30,7 +30,7 @@ class Trail extends Component {
   updateMyHikes = () => {
     const { hikeLater, hiked } = this.state
     const newTrail = {id: this.props.id, hikeLater, hiked}
-    const trails = JSON.parse(localStorage.getItem('myHikes'))
+    const trails = JSON.parse(localStorage.getItem('myHikes')) || []
     const existing = trails.find(trail => this.props.id === trail.id)
     if(existing && !hikeLater && !hiked) {
       let index = trails.indexOf(existing)
