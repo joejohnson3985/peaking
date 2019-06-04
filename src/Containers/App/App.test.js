@@ -6,15 +6,3 @@ import { Provider } from 'react-redux';
 
 const store = jest.fn()
 
-
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
-    <BrowserRouter>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </BrowserRouter>
-    , div);
-  ReactDOM.unmountComponentAtNode(div);
-});
