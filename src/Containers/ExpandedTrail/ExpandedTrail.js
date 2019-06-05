@@ -12,14 +12,14 @@ export class ExpandedTrail extends Component {
   }
 
   componentDidMount() {
-    this.getAllTrailIfno(this.props.match.params.id)
+    this.getAllTrailInfo(this.props.match.params.id)
   }
 
   handleClick = (e) => {
     window.history.back()
   }
 
-  getAllTrailIfno = (id) => {
+  getAllTrailInfo = (id) => {
     getMyHikes(id)
     .then(result => this.setState({trail: result.trails[0]}))
   }  

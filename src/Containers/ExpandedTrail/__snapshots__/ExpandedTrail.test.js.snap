@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpandedTrail Component Should match the snapshot 1`] = `
+<div
+  className="trail-overlay"
+>
+  <div
+    className="expanded-trail"
+  >
+    <section
+      className="main-img"
+      style={
+        Object {
+          "backgroundImage": "url(no-photo.png)",
+        }
+      }
+    >
+      <article
+        className="img-overlay"
+      >
+        <h1 />
+        <Ratings
+          changeRating={null}
+          gradientPathName=""
+          ignoreInlineStyles={false}
+          rating={0}
+          svgIconPaths="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+          svgIconViewBoxes="0 0 51 48"
+          typeOfWidget="Star"
+          widgetDimensions="50px"
+          widgetEmptyColors="rgb(203, 211, 227)"
+          widgetHoverColors="rgb(230, 67, 47)"
+          widgetRatedColors="#df7975"
+          widgetSpacings="7px"
+        >
+          <Widget
+            widgetDimension="25px"
+          />
+          <Widget
+            widgetDimension="25px"
+          />
+          <Widget
+            widgetDimension="25px"
+          />
+          <Widget
+            widgetDimension="25px"
+          />
+          <Widget
+            widgetDimension="25px"
+          />
+        </Ratings>
+      </article>
+    </section>
+    <section
+      className="trail-description"
+    >
+      <article
+        className="basic-info"
+      >
+        <img
+          src="https://cdn.apstatic.com/img/diff/undefined.svg"
+        />
+        <p>
+           stars from 
+           votes
+        </p>
+        <p>
+           miles
+        </p>
+      </article>
+      <article
+        className="condition-elevation"
+      >
+        <div>
+          <h1>
+            Conditions
+          </h1>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  Condition:
+                </td>
+                <td />
+              </tr>
+              <tr>
+                <td>
+                  Details:
+                </td>
+                <td />
+              </tr>
+              <tr>
+                <td>
+                  Date:
+                </td>
+                <td>
+                  .
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h1>
+            Elevation
+          </h1>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  Ascent
+                </td>
+                <td>
+                   ft.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Descent:
+                </td>
+                <td>
+                   ft.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Highest Point:
+                </td>
+                <td>
+                   ft.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Lowest Point:
+                </td>
+                <td>
+                   ft.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      <article>
+        <p />
+      </article>
+      <article>
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <button>
+            REI
+          </button>
+        </a>
+        <button
+          onClick={[Function]}
+        >
+          x
+        </button>
+      </article>
+    </section>
+  </div>
+</div>
+`;

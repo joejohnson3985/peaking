@@ -4,7 +4,7 @@ import { getTrails, getSearchedTrails, getCurrentLocationName } from '../../APIC
 import { setTrails, setLoading, setError } from '../../Actions';
 import { connect } from 'react-redux';
 
-class Filter extends Component {
+export class Filter extends Component {
   constructor() {
     super()
     this.state = {
@@ -35,7 +35,7 @@ class Filter extends Component {
   setCurrentLocation = (pos) => {
     const { latitude, longitude } = pos.coords
     getCurrentLocationName({lat: latitude, lng: longitude})
-      .then(query => this.findLocalAdress(query.results))
+      .then(query => this.findLocalAddress(query.results))
       .then(address =>  {
         this.setState({search: address.formatted_address, lat: latitude, lng: longitude}, () => {
           this.handleSubmit()
@@ -47,7 +47,7 @@ class Filter extends Component {
       })
   }
 
-  findLocalAdress = (results) => (results.find(result => result.types.includes('political')))
+  findLocalAddress = (results) => (results.find(result => result.types.includes('political')))
 
   errorLocating = (positionError) => {
     let errorMessage = `${positionError.message}. Default location is Denver, Colarado.`

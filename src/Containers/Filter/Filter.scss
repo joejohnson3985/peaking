@@ -2,20 +2,22 @@
 
 .filter {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 10vh;
-  margin: 0 100px;
+  min-height: 10vh;
+  padding: 0 100px;
   background-color: rgba(255,255,255, 0.6);
 
 
   .filter-options {
-    margin: 0 10px;
+    margin: 5px 10px;
     font-size: 18px;
     color: $dark-text;
   }
 
   .form-items {
+    transition: .2s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,5 +49,11 @@
     &:hover {
       background-color: $secondary;
     }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .filter {
+    padding-top: 80px;
   }
 }
