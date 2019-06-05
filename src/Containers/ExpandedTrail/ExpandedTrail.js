@@ -5,10 +5,10 @@ import './ExpandedTrail.scss'
 import { getMyHikes} from '../../APICalls'
 
 
-class ExpandedTrail extends Component {
+export class ExpandedTrail extends Component {
   constructor() {
     super()
-   this.state = {trail: {}}
+    this.state = {trail: {}}
   }
 
   componentDidMount() {

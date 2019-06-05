@@ -83,7 +83,7 @@ describe('Results', () => {
 
   describe('mapStateToProps', () => {
     it('Should have a mapped state prop', () => {
-      let mockState = {trails: [], isLoading: false, errorMessage: '',}
+      let mockState = {trails: [], isLoading: false, error: '',}
       let expected = {trails: [], isLoading: false}
       const result = mapStateToProps(mockState)
       expect(result).toEqual(expected)

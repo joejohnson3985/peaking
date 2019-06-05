@@ -25,11 +25,11 @@ export class ErrorDisplay extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   error: state.error
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setError: error => dispatch(setError(error))
 })
 
