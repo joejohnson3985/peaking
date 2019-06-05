@@ -9,6 +9,10 @@
   box-shadow: $heavy-card-shadow;
   border-radius: 4px;
 
+  p {
+    color: $dark-text;
+  }
+
 }
 
 .trail-overlay{
@@ -27,6 +31,10 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+
+  h1 {
+    color: $dark-text;
+  }
 }
 
 .main-img {
@@ -66,21 +74,48 @@
 .condition-elevation {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   div {
     width: 50%;
+    height: 100%;
     text-align: center;
-    margin: 5px;
+    margin: 0 10px;
     border: 1px solid $dark-accent;
-    padding: 10px;
+    padding: 5px;
 
-
-    table {
-      width: 100%;
+    p {
+      color: $dark-text;
+      margin: 10px 0;
     }
 
     h1 {
       text-align: center;
+      color: $dark-accent;
+      margin: 0;
+      margin-bottom: 10px;
     }
   }
 }
+
+.conditions p {
+  text-align: left;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button{
+    color: $dark-text;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: $heavy-card-shadow;
+      color: black;
+    }
+  }
+}
+
+

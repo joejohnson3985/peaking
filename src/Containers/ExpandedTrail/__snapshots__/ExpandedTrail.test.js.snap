@@ -71,81 +71,46 @@ exports[`ExpandedTrail Component Should match the snapshot 1`] = `
       <article
         className="condition-elevation"
       >
-        <div>
+        <div
+          className="conditions"
+        >
           <h1>
-            Conditions
+            Conditions: 
+             
           </h1>
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  Condition:
-                </td>
-                <td />
-              </tr>
-              <tr>
-                <td>
-                  Details:
-                </td>
-                <td />
-              </tr>
-              <tr>
-                <td>
-                  Date:
-                </td>
-                <td>
-                  .
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <p />
+          <p>
+            .
+          </p>
         </div>
         <div>
           <h1>
             Elevation
           </h1>
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  Ascent
-                </td>
-                <td>
-                   ft.
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Descent:
-                </td>
-                <td>
-                   ft.
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Highest Point:
-                </td>
-                <td>
-                   ft.
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Lowest Point:
-                </td>
-                <td>
-                   ft.
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <p>
+            Ascent: 
+             ft.
+          </p>
+          <p>
+            Descent: 
+             ft.
+          </p>
+          <p>
+            Highest Point: 
+             ft.
+          </p>
+          <p>
+            Lowest Point: 
+             ft.
+          </p>
         </div>
       </article>
       <article>
         <p />
       </article>
-      <article>
+      <article
+        className="buttons-row"
+      >
         <a
           rel="noopener noreferrer"
           target="_blank"

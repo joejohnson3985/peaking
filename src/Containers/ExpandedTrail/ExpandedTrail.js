@@ -51,53 +51,23 @@ export class ExpandedTrail extends Component {
               <p>{length} miles</p>
             </article>
             <article className='condition-elevation'>
-              <div>
-                <h1>Conditions</h1>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>Condition:</td>
-                      <td>{conditionStatus}</td>
-                    </tr>
-                    <tr>
-                      <td>Details:</td>
-                      <td>{conditionDetails}</td>
-                    </tr>
-                    <tr>
-                      <td>Date:</td>
-                      <td>{conditionDate}.</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div  className='conditions'>
+                <h1>Conditions: {conditionStatus} </h1>
+                <p>{conditionDetails}</p>
+                <p>{conditionDate}.</p>
               </div>
               <div>
                 <h1>Elevation</h1>
-                <table>
-                  <tbody>
-                    <tr> 
-                      <td>Ascent</td>
-                      <td>{ascent} ft.</td>
-                    </tr>
-                    <tr>
-                      <td>Descent:</td>
-                      <td>{descent} ft.</td>
-                    </tr>
-                    <tr>
-                      <td>Highest Point:</td>
-                      <td>{high} ft.</td>
-                    </tr>
-                    <tr>
-                      <td>Lowest Point:</td>
-                      <td>{low} ft.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <p>Ascent: {ascent} ft.</p>
+                <p>Descent: {descent} ft.</p>
+                <p>Highest Point: {high} ft.</p>
+                <p>Lowest Point: {low} ft.</p>
               </div>
             </article>
             <article>
               <p>{summary}</p>
             </article>
-            <article>
+            <article className='buttons-row'>
               <a href={url} target="_blank"  rel="noopener noreferrer">
                 <button >
                   REI
