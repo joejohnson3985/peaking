@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import React from 'react';
 
 
-const store = jest.fn()
 let wrapper;
 
 describe('App', () => {

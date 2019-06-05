@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Ratings from 'react-ratings-declarative';
 import noPhoto from '../../Media/no-photo.png';
 import './ExpandedTrail.scss'
-import { getMyHikes} from '../../APICalls'
+import { getMyHikes } from '../../APICalls'
 
 
 export class ExpandedTrail extends Component {

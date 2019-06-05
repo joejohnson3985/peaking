@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import { Filter, mapDispatchToProps } from './Filter';
 import { setTrails, setLoading, setError } from '../../Actions';
 import { getCurrentLocationName, getSearchedTrails, getTrails } from '../../APICalls'
-import MockData from '../../Utilities/mockData'
 
 jest.mock('../../APICalls/index.js');
 getCurrentLocationName.mockImplementation(() => Promise.resolve(1));
@@ -15,9 +14,7 @@ let expected;
 let result;
 let mockSetLoading;
 let mockSetError;
-let mockSetCurrentLocation;
 let mockPos;
-let mockFindLocalAddress;
 let mockEvent;
 let mockAddress1 = {address: 'Whittier, Denver, CO 80205, USA', types:['political']}
 let mockAddress2 = {address: '2445 N Gaylord Street, Denver, CO, 80205', types:['street address']}
@@ -40,7 +37,6 @@ describe('Filter', () => {
   beforeEach(() => {
     mockSetLoading = jest.fn()
     mockSetError = jest.fn()
-    mockSetCurrentLocation= jest.fn()
     wrapper= shallow(
       <Filter setLoading={mockSetLoading} setError={mockSetError} />
     )
