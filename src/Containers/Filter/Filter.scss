@@ -2,24 +2,58 @@
 
 .filter {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
-  height: 10vh;
-  margin: 0 100px;
+  justify-content: center;
+  min-height: 10vh;
+  padding: 0 100px;
   background-color: rgba(255,255,255, 0.6);
 
 
   .filter-options {
-    margin: 0 10px;
+    margin: 5px 10px;
     font-size: 18px;
     color: $dark-text;
   }
 
   .form-items {
+    transition: .2s;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 70%;
+    border: $primary;
+
+    input {
+      cursor: text;
+    }
+
+    select {
+      cursor: pointer;
+    }
+  }
+
+  .submit-btn {
+    transition: .1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dark-text;
+    background-color: white;
+    font-size: 18px;
+    border: .5px solid $dark-text;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .filter {
+    padding-top: 80px;
   }
 }

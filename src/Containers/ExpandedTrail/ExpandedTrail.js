@@ -5,27 +5,26 @@ import './ExpandedTrail.scss'
 import { getMyHikes} from '../../APICalls'
 
 
-class ExpandedTrail extends Component {
+export class ExpandedTrail extends Component {
   constructor() {
     super()
-   this.state = {trail: {}}
+    this.state = {trail: {}}
   }
 
   componentDidMount() {
-    this.getAllTrailIfno(this.props.match.params.id)
+    this.getAllTrailInfo(this.props.match.params.id)
   }
 
   handleClick = (e) => {
     window.history.back()
   }
 
-  getAllTrailIfno = (id) => {
+  getAllTrailInfo = (id) => {
     getMyHikes(id)
     .then(result => this.setState({trail: result.trails[0]}))
   }  
 
   render() {
-    console.log(this.state.trail)
     const { name, difficulty, stars, starVotes, length, imgMedium, summary, conditionStatus, conditionDetails, conditionDate, low, ascent, descent, high, url } = this.state.trail
     const image = imgMedium || noPhoto
     const bg = {backgroundImage: `url(${image})`}

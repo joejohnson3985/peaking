@@ -46,5 +46,9 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "devDependencies": {
+    "enzyme-to-json": "^3.3.5",
+    "jest-cli": "git://github.com/hankhsiao/jest.git"
   }
 }

@@ -6,7 +6,7 @@
   color: $dark-text;
   margin: 10px auto;
   width: 44%;
-  min-height: 350px;
+  min-height: 300px;
   max-height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,6 +17,8 @@
   justify-content: space-between;
   border-radius: 3px;
   background-position: center;
+  flex-wrap: wrap;
+  min-width: 280px;
 
   &:hover {
     box-shadow: $heavy-card-shadow;
@@ -50,6 +52,7 @@
   div {
     display: flex;
     align-items: center;
+    text-align: center;
 
     i {
       margin: 5px

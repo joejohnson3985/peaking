@@ -1,20 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { shallow } from 'enzyme';
+import React from 'react';
+
 
 const store = jest.fn()
+let wrapper;
 
-
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(
-    <BrowserRouter>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </BrowserRouter>
-    , div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('App', () => {
+  it('Should match the snapshot', () => {
+    wrapper = shallow(
+      <App />
+    )
+    expect(wrapper).toMatchSnapshot()
+  })
+}) 

@@ -11,9 +11,14 @@
 
 .load-container{
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    color: $dark-accent;
 }
 
 .load{
@@ -42,11 +47,6 @@
     background-color: $dark-accent;
     -webkit-animation-delay: 0.4s;
     animation-delay: 0.4s;
-  }
-  span:nth-child(4){
-    background-color: $light-accent;
-    -webkit-animation-delay: 0.6s;
-    animation-delay: 0.6s;
   }
 }
 

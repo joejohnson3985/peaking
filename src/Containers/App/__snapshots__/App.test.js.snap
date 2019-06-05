@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Should match the snapshot 1`] = `
+<div
+  className="content"
+>
+  <Sidebar />
+  <Connect(ErrorDisplay) />
+  <main>
+    <Switch>
+      <Redirect
+        exact={true}
+        from="/"
+        to="/search"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(Filter)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/search"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(Header)",
+            "type": [Function],
+          }
+        }
+        path="/my-hikes"
+      />
+      <Route
+        component={[Function]}
+        path="/trail/:id"
+      />
+    </Switch>
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(Results)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/search"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(Results)",
+          "type": [Function],
+        }
+      }
+      path="/my-hikes"
+    />
+  </main>
+</div>
+`;

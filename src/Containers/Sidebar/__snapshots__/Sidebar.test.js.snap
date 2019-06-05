@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar Should match the snapshot when showNav is false 1`] = `
+<div
+  className="side-bar-container"
+>
+  <i
+    className="fas fa-bars hamburger-link"
+    onClick={[Function]}
+  />
+  <div
+    className="bar"
+  >
+    <div>
+      <i
+        className="fas fa-times x-link"
+        onClick={[Function]}
+      />
+      <h1>
+        Peaking
+      </h1>
+      <NavLink
+        activeClassName="current-nav"
+        className="nav-link find-hikes-link"
+        exact={true}
+        onClick={[Function]}
+        to="/search"
+      >
+        <h4>
+          Find Hikes
+        </h4>
+      </NavLink>
+      <NavLink
+        activeClassName="current-nav"
+        className="nav-link my-hikes-link"
+        exact={true}
+        onClick={[Function]}
+        to="/my-hikes"
+      >
+        <h4>
+          My Hikes
+        </h4>
+      </NavLink>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Sidebar Should match the snapshot when showNav is true 1`] = `
+<div
+  className="side-bar-container"
+>
+  <i
+    className="fas fa-bars hamburger-link"
+    onClick={[Function]}
+  />
+  <div
+    className="bar"
+  >
+    <div>
+      <i
+        className="fas fa-times x-link"
+        onClick={[Function]}
+      />
+      <h1>
+        Peaking
+      </h1>
+      <NavLink
+        activeClassName="current-nav"
+        className="nav-link find-hikes-link"
+        exact={true}
+        onClick={[Function]}
+        to="/search"
+      >
+        <h4>
+          Find Hikes
+        </h4>
+      </NavLink>
+      <NavLink
+        activeClassName="current-nav"
+        className="nav-link my-hikes-link"
+        exact={true}
+        onClick={[Function]}
+        to="/my-hikes"
+      >
+        <h4>
+          My Hikes
+        </h4>
+      </NavLink>
+    </div>
+  </div>
+</div>
+`;

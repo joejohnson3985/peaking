@@ -6,20 +6,20 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 
-class Header extends Component {
+export class Header extends Component {
   constructor() {
     super()
     this.state = {
       ids: [],
-      trails: JSON.parse(localStorage.getItem('myHikes'))
+      trails: JSON.parse(localStorage.getItem('myHikes')) || []
     }
   }
 
   componentDidMount() {
-    this.fetchAllMyHikes()
+    this.getAllMyHikes()
   }
 
-  fetchAllMyHikes = () => {
+  getAllMyHikes = () => {
     const {trails} = this.state
     const ids = trails.map(trail => trail.id)
     this.setState({ids})
@@ -42,6 +42,8 @@ class Header extends Component {
   getTrails = (ids) => {
     getMyHikes(ids)
     .then(results => this.props.setTrails(results.trails))
+    .catch(error => console.log(error))
+
   }
 
   render() {
@@ -63,14 +65,14 @@ class Header extends Component {
       <div className='header'>
         {whatToRender}
         <NavLink exact={true} to='/my-hikes/completed-hiked' className='nav-link' activeClassName='current-nav' onClick={this.getHikedTrails}>Hiked</NavLink>
-        <NavLink exact={true} to='/my-hikes/' className='nav-link' activeClassName='current-nav' onClick={this.fetchAllMyHikes}>My Hikes</NavLink>
+        <NavLink exact={true} to='/my-hikes/' className='nav-link' activeClassName='current-nav' onClick={this.getAllMyHikes}>My Hikes</NavLink>
         <NavLink exact={true} to='/my-hikes/hike-later' className='nav-link' activeClassName='current-nav' onClick={this.getFutureTrails}>Hike Later</NavLink>
       </div>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setTrails: trails => dispatch(setTrails(trails))
 })
 

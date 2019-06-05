@@ -1,0 +1,5 @@
+@import '../../Utilities/_Variables.scss';
+
+.show-error-bar {
+  @include error;
+}

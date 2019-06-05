@@ -27,3 +27,14 @@ $heavy-card-shadow: 0 0 11px rgba(33,33,33,.6);
   bottom: 0;
   right: 0;
 }
+
+@mixin error {
+  transition: height .7s;
+  position: absolute;
+  width: 100vw;
+  background: $light-accent;
+  color: $primary;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}

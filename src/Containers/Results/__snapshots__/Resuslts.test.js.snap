@@ -1,3 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Results Component Should match the snapshot 1`] = `undefined`;
+exports[`Results Component Should match the snapshot when isLoading is false 1`] = `
+<div>
+  <div
+    className="results"
+  >
+    <Trail
+      ascent={2541}
+      conditionDate="2019-06-04 13:38:04"
+      conditionDetails="Mostly Dry: All dry. A few places of the hike have small streams flowing through the path but nothing too extreme. Rain = mud tho.  "
+      conditionStatus="All Clear"
+      descent={-2540}
+      difficulty="blueBlack"
+      high={8342}
+      id={7000130}
+      imgMedium="https://cdn-files.apstatic.com/hike/7005382_medium_1554312030.jpg"
+      imgSmall="https://cdn-files.apstatic.com/hike/7005382_small_1554312030.jpg"
+      imgSmallMed="https://cdn-files.apstatic.com/hike/7005382_smallMed_1554312030.jpg"
+      imgSqSmall="https://cdn-files.apstatic.com/hike/7005382_sqsmall_1554312030.jpg"
+      key="7000130"
+      latitude={39.9787}
+      length={5.7}
+      location="Boulder, Colorado"
+      longitude={-105.2755}
+      low={6103}
+      name="Bear Peak Out and Back"
+      starVotes={94}
+      stars={4.6}
+      summary="A must-do hike for Boulder locals and visitors alike!"
+      type="Featured Hike"
+      url="https://www.hikingproject.com/trail/7000130/bear-peak-out-and-back"
+    />
+    <Trail
+      ascent={1261}
+      conditionDate="2019-05-29 12:06:52"
+      conditionDetails="A little wet in places but clear overall"
+      conditionStatus="All Clear"
+      descent={-1282}
+      difficulty="blue"
+      high={6800}
+      id={7004226}
+      imgMedium="https://cdn-files.apstatic.com/hike/7039883_medium_1555092747.jpg"
+      imgSmall="https://cdn-files.apstatic.com/hike/7039883_small_1555092747.jpg"
+      imgSmallMed="https://cdn-files.apstatic.com/hike/7039883_smallMed_1555092747.jpg"
+      imgSqSmall="https://cdn-files.apstatic.com/hike/7039883_sqsmall_1555092747.jpg"
+      key="7004226"
+      latitude={40.02}
+      length={5.3}
+      location="Boulder, Colorado"
+      longitude={-105.2979}
+      low={5530}
+      name="Sunshine Lion's Lair Loop"
+      starVotes={95}
+      stars={4.5}
+      summary="Great Mount Sanitas views are the reward for this gentler loop in Sunshine Canyon."
+      type="Featured Hike"
+      url="https://www.hikingproject.com/trail/7004226/sunshine-lions-lair-loop"
+    />
+  </div>
+</div>
+`;
+
+exports[`Results Component Should match the snapshot when isLoading is true 1`] = `
+<div>
+  <div
+    className="results"
+  >
+    <div
+      className="load-container"
+    >
+      <div
+        className="load"
+      >
+        <span />
+        <span />
+        <span />
+      </div>
+      <h1>
+        Loading Hikes
+      </h1>
+    </div>
+  </div>
+</div>
+`;
