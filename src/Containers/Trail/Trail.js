@@ -81,7 +81,9 @@ class Trail extends Component {
           <p>{length} miles</p>
           <img src={imgUrl} alt={difficulty}/>
         </div>
-          <NavLink to={routeUrl}>More Info</NavLink>
+        <NavLink className='more-info' to={routeUrl} >
+          <p>More Info</p>
+        </NavLink>
         <div className='user-actions'>
           <div onClick={this.handleHikeLater} className='hike-later'>
             {this.displayChecks(hikeLater)}
@@ -102,3 +104,4 @@ class Trail extends Component {
 
 
 export default Trail;
+

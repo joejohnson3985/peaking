@@ -20,11 +20,6 @@
   flex-wrap: wrap;
   min-width: 280px;
 
-  &:hover {
-    box-shadow: $heavy-card-shadow;
-    cursor: pointer;
-  }
-
 }
 
 .widget-ratings {
@@ -65,5 +60,28 @@
 
   .trail-name {
     justify-content: center;
+  }
+}
+
+.more-info {
+  transition: .2s;
+  width: 40%;
+  background-color: $secondary;
+  text-align: center;
+  font-size: 22px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+
+  
+  p {
+    color: $dark-accent;
+    margin: 5px 0;
+  }
+
+  &:hover {
+    box-shadow: $heavy-card-shadow;
+    color: $light-accent;
+    cursor: pointer;
   }
 }
