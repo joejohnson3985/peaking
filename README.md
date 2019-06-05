@@ -51,4 +51,5 @@ This was a solo project where I was tasked to use the technology i’ve been wor
 - Redux
 - Router
 - Asynchronous Javascript
+
 I was also required to work within constraints to deliver a unique product for my audience which helps them in some way. 
