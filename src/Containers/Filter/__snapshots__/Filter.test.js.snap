@@ -27,7 +27,7 @@ exports[`Filter Component Should match the snapshot 1`] = `
     <label
       htmlFor="maxDistance"
     >
-      Radius
+      Radius (miles)
     </label>
     <input
       className="filter-options"
@@ -89,7 +89,7 @@ exports[`Filter Component Should match the snapshot 1`] = `
     <label
       htmlFor="minLength"
     >
-      Minimum Length
+      Min Trail Length (miles)
     </label>
     <input
       className="filter-options"

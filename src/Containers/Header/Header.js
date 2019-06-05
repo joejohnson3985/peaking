@@ -3,6 +3,7 @@ import './Header.scss';
 import { getMyHikes} from '../../APICalls'
 import { setTrails } from '../../Actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 
@@ -71,6 +72,10 @@ export class Header extends Component {
     )
   }
 }
+
+Header.propTypes = {
+  setTrails: PropTypes.func
+};
 
 export const mapDispatchToProps = dispatch => ({
   setTrails: trails => dispatch(setTrails(trails))

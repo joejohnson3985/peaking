@@ -52,9 +52,12 @@ exports[`Trail Should match the snapshot when showNav is false 1`] = `
     />
   </div>
   <NavLink
+    className="more-info"
     to="/trail/7004226"
   >
-    More Info
+    <p>
+      More Info
+    </p>
   </NavLink>
   <div
     className="user-actions"
@@ -142,9 +145,12 @@ exports[`Trail displayChecks Should match snapshot if value is false 1`] = `
     />
   </div>
   <NavLink
+    className="more-info"
     to="/trail/7004226"
   >
-    More Info
+    <p>
+      More Info
+    </p>
   </NavLink>
   <div
     className="user-actions"
@@ -232,9 +238,12 @@ exports[`Trail displayChecks Should match snapshot if value is false 2`] = `
     />
   </div>
   <NavLink
+    className="more-info"
     to="/trail/7004226"
   >
-    More Info
+    <p>
+      More Info
+    </p>
   </NavLink>
   <div
     className="user-actions"

@@ -1,11 +1,9 @@
 import Trail from './Trail';
 import { shallow } from 'enzyme';
 import React from 'react';
-import {storageMock} from '../../setUpTests.js'
 import MockData from '../../Utilities/mockData'
 
 
-const store = jest.fn()
 let wrapper;
 let mockId = 7004226
 let mockMyHike = MockData.myHike

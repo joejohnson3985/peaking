@@ -3,6 +3,8 @@ import './Filter.scss'
 import { getTrails, getSearchedTrails, getCurrentLocationName } from '../../APICalls'
 import { setTrails, setLoading, setError } from '../../Actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 
 export class Filter extends Component {
   constructor() {
@@ -87,7 +89,7 @@ export class Filter extends Component {
           <input className='filter-options' name='search' value={search} onBlur={this.handleSearch} onChange={this.handleChange} type='text'/>
         </div>
         <div className='form-items'>
-          <label htmlFor='maxDistance'>Radius</label>
+          <label htmlFor='maxDistance'>Radius (miles)</label>
           <input className='filter-options' name='maxDistance' onChange={this.handleChange} value={maxDistance} type='number'/>
         </div>
         <div className='form-items'>
@@ -102,7 +104,7 @@ export class Filter extends Component {
           </select>
         </div>
         <div className='form-items'>
-          <label htmlFor='minLength'>Minimum Length</label>
+          <label htmlFor='minLength'>Min Trail Length (miles)</label>
           <input className='filter-options' name='minLength' onChange={this.handleChange} value={minLength} type='number'/>
         </div>
         <div className='form-items'>
@@ -117,6 +119,12 @@ export class Filter extends Component {
     )
   }
 }
+
+Filter.propTypes = {
+  setTrails: PropTypes.func,
+  setError: PropTypes.func,
+  setLoading: PropTypes.func
+};
 
 export const mapDispatchToProps = dispatch => ({
   setTrails: trails => dispatch(setTrails(trails)),

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Results.scss'
 import { connect } from 'react-redux';
-import Trail from '../Trail/Trail'
+import Trail from '../../Components/Trail/Trail'
+import PropTypes from 'prop-types';
 
 
 export class Results extends Component {
@@ -33,6 +34,11 @@ export class Results extends Component {
       </div>
     )
   }
+}
+
+Results.propTypes = {
+  trails: PropTypes.array,
+  isLoading: PropTypes.bool
 }
 
 export const mapStateToProps = state => ({

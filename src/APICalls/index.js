@@ -17,8 +17,7 @@ export const getSearchedTrails = address => {
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${gmapikey}`
   return fetch(url).then(response => {
     if (!response.ok) {
-      console.log(response)
-      throw new Error('Error grabbing that location!');
+      throw new Error('Error grabbing that location.');
     }
     return response.json();
   })
@@ -29,8 +28,7 @@ export const getCurrentLocationName = location => {
   const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${gmapikey}`
   return fetch(url).then(response => {
     if (!response.ok) {
-      console.log(response)
-      throw new Error('Error grabbing that location!');
+      throw new Error('Unable to name this location.');
     }
     return response.json();
   })
