@@ -2,11 +2,11 @@ import React from 'react';
 import './App.scss';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar'
-import Results from '../Results/Results'
-import Filter from '../Filter/Filter'
-import Header from '../../Components/Header/Header'
+import Results from '../../Containers/Results/Results'
+import Filter from '../../Containers/Filter/Filter'
+import Header from '../../Containers/Header/Header'
 import ExpandedTrail from '../ExpandedTrail/ExpandedTrail'
-import ErrorDisplay from '../ErrorDisplay/ErrorDisplay'
+import ErrorDisplay from '../../Containers/ErrorDisplay/ErrorDisplay'
 
 const App = () => {
   return (

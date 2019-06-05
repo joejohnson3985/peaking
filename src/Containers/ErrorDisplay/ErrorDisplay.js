@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './ErrorDisplay.scss';
 import { setError } from '../../Actions';
+import PropTypes from 'prop-types';
 
 
 export class ErrorDisplay extends Component {
@@ -24,6 +25,11 @@ export class ErrorDisplay extends Component {
     ) 
   }
 }
+
+ErrorDisplay.propTypes = {
+  error: PropTypes.string,
+  setError: PropTypes.func
+};
 
 export const mapStateToProps = state => ({
   error: state.error
