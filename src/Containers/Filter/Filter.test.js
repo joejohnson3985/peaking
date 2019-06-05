@@ -40,7 +40,7 @@ describe('Filter', () => {
       let address1 = {address: 'Whittier, Denver, CO 80205, USA', types:['political']}
       let address2 = {address: '2445 N Gaylord Street, Denver, CO, 80205', types:['street address']}
       let addresses = [{address1}, {address2}]
-      it('Should return an object with a type that includes political', () => {
+      it.skip('Should return an object with a type that includes political', () => {
         result = wrapper.instance().findLocalAddress(addresses)
         expect(result).toEqual(address1)
       })
