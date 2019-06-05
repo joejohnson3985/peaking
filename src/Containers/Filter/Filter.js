@@ -42,7 +42,6 @@ export class Filter extends Component {
         }
       )})
       .catch(error => {
-        console.log(error)
         this.handleSubmit()
         this.props.setError(error.message)
       })
@@ -69,7 +68,7 @@ export class Filter extends Component {
       this.setState({lat, lng})
 
     })
-    .catch(error => console.log(error))
+    .catch(error => this.props.setError(error))
   }
 
   handleSubmit = () => {

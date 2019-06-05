@@ -65,7 +65,7 @@ export class Header extends Component {
       <div className='header'>
         {whatToRender}
         <NavLink exact={true} to='/my-hikes/completed-hiked' className='nav-link' activeClassName='current-nav' onClick={this.getHikedTrails}>Hiked</NavLink>
-        <NavLink exact={true} to='/my-hikes/' className='nav-link' activeClassName='current-nav' onClick={this.fetchAllMyHikes}>My Hikes</NavLink>
+        <NavLink exact={true} to='/my-hikes/' className='nav-link' activeClassName='current-nav' onClick={this.getAllMyHikes}>My Hikes</NavLink>
         <NavLink exact={true} to='/my-hikes/hike-later' className='nav-link' activeClassName='current-nav' onClick={this.getFutureTrails}>Hike Later</NavLink>
       </div>
     )

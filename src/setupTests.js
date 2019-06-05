@@ -3,9 +3,16 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() })
 
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  clear: jest.fn()
-};
-global.localStorage = localStorageMock;
+export const storageMock = () => {
+    let storage = {};
+
+    return {
+      setItem: function(key, value) {
+        storage[key] = value || '';
+      },
+      getItem: function(key) {
+        return key in storage ? storage[key] : null;
+      }
+    };
+  }
+global.localStorage = storageMock;

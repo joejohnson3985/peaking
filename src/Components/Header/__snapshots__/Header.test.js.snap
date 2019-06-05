@@ -37,6 +37,7 @@ exports[`Header component Should match the snapshot when trails has trails 1`] =
     activeClassName="current-nav"
     className="nav-link"
     exact={true}
+    onClick={[Function]}
     to="/my-hikes/"
   >
     My Hikes
@@ -90,6 +91,7 @@ exports[`Header component Should match the snapshot when trails is empty 1`] = `
     activeClassName="current-nav"
     className="nav-link"
     exact={true}
+    onClick={[Function]}
     to="/my-hikes/"
   >
     My Hikes

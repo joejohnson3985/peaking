@@ -49,18 +49,6 @@ exports[`App Should match the snapshot 1`] = `
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
-          "displayName": "Connect(Stats)",
-          "type": [Function],
-        }
-      }
-      path="/my-hikes"
-    />
-    <Route
-      component={
-        Object {
-          "$$typeof": Symbol(react.memo),
-          "WrappedComponent": [Function],
-          "compare": null,
           "displayName": "Connect(Results)",
           "type": [Function],
         }

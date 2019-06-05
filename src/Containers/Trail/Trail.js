@@ -15,16 +15,16 @@ class Trail extends Component {
   }
 
   componentDidMount() {
-    this.checkState()
-  }
-
-  checkState = () => {
     const trails = JSON.parse(localStorage.getItem('myHikes')) || []
     const existing = trails.find(trail => this.props.id === trail.id)
     if(existing) {
+      this.checkState(existing)
+    }
+  }
+
+  checkState = (existing) => {
       const { hikeLater, hiked } = existing
       this.setState({hikeLater, hiked})
-    }
   }
 
   updateMyHikes = () => {

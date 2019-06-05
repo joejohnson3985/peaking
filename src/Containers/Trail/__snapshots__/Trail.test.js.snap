@@ -1,0 +1,271 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trail Should match the snapshot when showNav is false 1`] = `
+<div
+  className="trail"
+  style={
+    Object {
+      "backgroundImage": "url(no-photo.png)",
+    }
+  }
+  to="/trail/7004226"
+>
+  <div
+    className="data"
+  >
+    <p />
+    <Ratings
+      changeRating={null}
+      gradientPathName=""
+      ignoreInlineStyles={false}
+      rating={0}
+      svgIconPaths="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+      svgIconViewBoxes="0 0 51 48"
+      typeOfWidget="Star"
+      widgetDimensions="50px"
+      widgetEmptyColors="rgb(203, 211, 227)"
+      widgetHoverColors="rgb(230, 67, 47)"
+      widgetRatedColors="#df7975"
+      widgetSpacings="7px"
+    >
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+    </Ratings>
+    <p>
+       miles
+    </p>
+    <img
+      src="https://cdn.apstatic.com/img/diff/undefined.svg"
+    />
+  </div>
+  <NavLink
+    to="/trail/7004226"
+  >
+    More Info
+  </NavLink>
+  <div
+    className="user-actions"
+  >
+    <div
+      className="hike-later"
+      onClick={[Function]}
+    >
+      <i
+        className="far fa-square"
+      />
+      <label>
+        Hike Later
+      </label>
+    </div>
+    <div
+      className="trail-name"
+    />
+    <div
+      className="hiked"
+      onClick={[Function]}
+    >
+      <label
+        onClick={[Function]}
+      >
+        Hiked
+      </label>
+      <i
+        className="far fa-square"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trail displayChecks Should match snapshot if value is false 1`] = `
+<div
+  className="trail"
+  style={
+    Object {
+      "backgroundImage": "url(no-photo.png)",
+    }
+  }
+  to="/trail/7004226"
+>
+  <div
+    className="data"
+  >
+    <p />
+    <Ratings
+      changeRating={null}
+      gradientPathName=""
+      ignoreInlineStyles={false}
+      rating={0}
+      svgIconPaths="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+      svgIconViewBoxes="0 0 51 48"
+      typeOfWidget="Star"
+      widgetDimensions="50px"
+      widgetEmptyColors="rgb(203, 211, 227)"
+      widgetHoverColors="rgb(230, 67, 47)"
+      widgetRatedColors="#df7975"
+      widgetSpacings="7px"
+    >
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+    </Ratings>
+    <p>
+       miles
+    </p>
+    <img
+      src="https://cdn.apstatic.com/img/diff/undefined.svg"
+    />
+  </div>
+  <NavLink
+    to="/trail/7004226"
+  >
+    More Info
+  </NavLink>
+  <div
+    className="user-actions"
+  >
+    <div
+      className="hike-later"
+      onClick={[Function]}
+    >
+      <i
+        className="far fa-square"
+      />
+      <label>
+        Hike Later
+      </label>
+    </div>
+    <div
+      className="trail-name"
+    />
+    <div
+      className="hiked"
+      onClick={[Function]}
+    >
+      <label
+        onClick={[Function]}
+      >
+        Hiked
+      </label>
+      <i
+        className="far fa-square"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trail displayChecks Should match snapshot if value is false 2`] = `
+<div
+  className="trail"
+  style={
+    Object {
+      "backgroundImage": "url(no-photo.png)",
+    }
+  }
+  to="/trail/7004226"
+>
+  <div
+    className="data"
+  >
+    <p />
+    <Ratings
+      changeRating={null}
+      gradientPathName=""
+      ignoreInlineStyles={false}
+      rating={0}
+      svgIconPaths="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+      svgIconViewBoxes="0 0 51 48"
+      typeOfWidget="Star"
+      widgetDimensions="50px"
+      widgetEmptyColors="rgb(203, 211, 227)"
+      widgetHoverColors="rgb(230, 67, 47)"
+      widgetRatedColors="#df7975"
+      widgetSpacings="7px"
+    >
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+      <Widget
+        widgetDimension="25px"
+      />
+    </Ratings>
+    <p>
+       miles
+    </p>
+    <img
+      src="https://cdn.apstatic.com/img/diff/undefined.svg"
+    />
+  </div>
+  <NavLink
+    to="/trail/7004226"
+  >
+    More Info
+  </NavLink>
+  <div
+    className="user-actions"
+  >
+    <div
+      className="hike-later"
+      onClick={[Function]}
+    >
+      <i
+        className="far fa-square"
+      />
+      <label>
+        Hike Later
+      </label>
+    </div>
+    <div
+      className="trail-name"
+    />
+    <div
+      className="hiked"
+      onClick={[Function]}
+    >
+      <label
+        onClick={[Function]}
+      >
+        Hiked
+      </label>
+      <i
+        className="far fa-square"
+      />
+    </div>
+  </div>
+</div>
+`;

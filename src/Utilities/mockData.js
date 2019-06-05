@@ -135,5 +135,7 @@ const mockTrails = [
       "hikeLater": true
     }
   ]
+const myHikes = [{"id": 7004226, hiked: false, hikeLater: true}]
+const myHike = {"id": 7004226, hiked: false, hikeLater: true}
 
-module.exports = {mockGetMyHikesResults, mockTrails}
+module.exports = {mockGetMyHikesResults, mockTrails, myHikes, myHike}
