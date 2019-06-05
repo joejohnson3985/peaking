@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Peaking
 
-## Available Scripts
+Peaking is an application leveraging the incredible Hiking Project api from REI. It provides information for hiking locations all around the country, with photos, condition updates, milage and more! With Peaking you will be able to discover knew hikes, keep track of the ones you have done, and flag all the hikes you would like to do. Start peaking today!
 
-In the project directory, you can run:
+# Installation
 
-### `npm start`
+**Clone** this repo https://github.com/joejohnson3985/peaking.git and move into it.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+``` git clone https://github.com/joejohnson3985/peaking.git```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+``` cd peaking```
 
-### `npm test`
+In the project directory you will need to instal dependencies and start the server, please run:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```npm install```
 
-### `npm run build`
+```npm start```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm start will run the app in the development mode. When the server is running, open http://localhost:3000 to view it in the browser. 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+If any alterations to the code are made, then the page will refresh.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Search and Results Page
 
-### `npm run eject`
+![PeakingSearchPage](https://github.com/joejohnson3985/peaking/blob/master/src/Media/search.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# My Hikes
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![MyHikes](https://github.com/joejohnson3985/peaking/blob/master/src/Media/myHikes.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# No Hikes Saved
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![NoHikesSaved](https://github.com/joejohnson3985/peaking/blob/master/src/Media/ErrorHandling.png)
 
-## Learn More
+# Expanded Trail
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![ExpandedTrail](https://github.com/joejohnson3985/peaking/blob/master/src/Media/expanded.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Tech/Frameworks Used
 
-### Code Splitting
+* React
+* Sass/Scss
+* JSX
+* fetch API
+* Testing with Enzyme & Jest
+* Router
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Learning Goals 
+This was a solo project where I was tasked to use the technology i’ve been working with over the course of the module to demonstrate mastery of the following:
+- React
+- Redux
+- Router
+- Asynchronous Javascript
+I was also required to work within constraints to deliver a unique product for my audience which helps them in some way. 
