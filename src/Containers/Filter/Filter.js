@@ -42,12 +42,13 @@ export class Filter extends Component {
         }
       )})
       .catch(error => {
+        console.log(error)
         this.handleSubmit()
         this.props.setError(error.message)
       })
   }
 
-  findLocalAddress = (results) => (results.find(result => result.types.includes('political')))
+  findLocalAddress = (results) => results.find(result => result.types.includes('political'))
 
   errorLocating = (positionError) => {
     let errorMessage = `${positionError.message}. Default location is Denver, Colarado.`
@@ -61,14 +62,14 @@ export class Filter extends Component {
     this.setState({[name]: value})
   }
 
-  handleSearch = (e) => {
-    e.preventDefault();
+  handleSearch = () => {
     getSearchedTrails(this.state.search)
     .then(results => {
       const { lat, lng } = results.results[0].geometry.location
       this.setState({lat, lng})
 
     })
+    .catch(error => console.log(error))
   }
 
   handleSubmit = () => {

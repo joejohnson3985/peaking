@@ -136,4 +136,4 @@ const mockTrails = [
     }
   ]
 
-module.exports = {mockGetMyHikesResults, mockTrails }
+module.exports = {mockGetMyHikesResults, mockTrails}
