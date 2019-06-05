@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorDisplay Component Should match the snapshot when there is an error. 1`] = `
+<div
+  className="show-error-bar"
+>
+  <p>
+    error
+  </p>
+</div>
+`;
+
+exports[`ErrorDisplay Component Should match the snapshot when there is no error. 1`] = `
+<div
+  className="show-error-bar"
+/>
+`;

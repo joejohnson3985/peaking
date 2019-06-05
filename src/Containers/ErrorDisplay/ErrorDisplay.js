@@ -4,19 +4,18 @@ import './ErrorDisplay.scss';
 import { setError } from '../../Actions';
 
 
-class ErrorDisplay extends Component {
+export class ErrorDisplay extends Component {
 
-  showError = () => {
-    if(this.props.error.length) {
-      setTimeout(() => this.props.setError(''), 3500)
-    }
+  clearError = () => {
+    let cleared = ''
+    setTimeout(() => this.props.setError(cleared), 3500)
   }
 
   render() {
     let whatToRender;
     if(this.props.error.length) {
       whatToRender = <p>{this.props.error}</p>
-      this.showError()
+      this.clearError()
     }
     return(
       <div className='show-error-bar'>
@@ -35,4 +34,3 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ErrorDisplay)
-
