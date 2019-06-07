@@ -12,8 +12,7 @@ export class Header extends Component {
     super()
     this.state = {
       ids: [],
-      trails: JSON.parse(localStorage.getItem('myHikes')) || [],
-      showStats: false
+      trails: JSON.parse(localStorage.getItem('myHikes')) || []
     }
   }
 

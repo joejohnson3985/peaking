@@ -51,6 +51,14 @@ exports[`Header component Should match the snapshot when trails has trails 1`] =
   >
     Hike Later
   </NavLink>
+  <NavLink
+    activeClassName="current-nav"
+    className="nav-link"
+    exact={true}
+    to="/my-hikes/stats"
+  >
+    My Stats
+  </NavLink>
 </div>
 `;
 
@@ -104,6 +112,14 @@ exports[`Header component Should match the snapshot when trails is empty 1`] = `
     to="/my-hikes/hike-later"
   >
     Hike Later
+  </NavLink>
+  <NavLink
+    activeClassName="current-nav"
+    className="nav-link"
+    exact={true}
+    to="/my-hikes/stats"
+  >
+    My Stats
   </NavLink>
 </div>
 `;
