@@ -6,7 +6,6 @@ import './Stats.scss'
 export class Stats extends Component {
 
   getStats = (option) => {
-
     let stat = this.props.trails.reduce((accum, trail) => {
       accum += trail[option]
       return accum
@@ -28,7 +27,6 @@ export class Stats extends Component {
         <div className='popup'>
             <p>You have hiked <strong>{this.props.trails.length}</strong> trails, covering <strong>{this.getStats('length')}</strong> miles and climbing <strong>{this.getStats('ascent')}</strong> feet. You rock!</p>
             <button onClick={this.handleClick}>Close</button>
-
         </div>
       </div>
     )
