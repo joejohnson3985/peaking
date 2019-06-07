@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stats Component Should match snapshot 1`] = `
+<div
+  className="overlay"
+>
+  <div
+    className="popup"
+  >
+    <p>
+      You have hiked 
+      <strong>
+        2
+      </strong>
+       trails, covering 
+      <strong>
+        11
+      </strong>
+       miles and climbing 
+      <strong>
+        3802
+      </strong>
+       feet. You rock!
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      Close
+    </button>
+  </div>
+</div>
+`;

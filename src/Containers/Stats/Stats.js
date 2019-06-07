@@ -3,16 +3,7 @@ import { connect } from 'react-redux';
 import './Stats.scss'
 
 
-class Stats extends Component {
-  constructor() {
-    super()
-    this.state = {
-      milesHiked: 0,
-      elelvationGained: 0,
-      trailsHiked: 0
-
-    }
-  }
+export class Stats extends Component {
 
   getStats = (option) => {
 
