@@ -1,6 +1,6 @@
 # Peaking
 
-Peaking is an application leveraging the incredible Hiking Project api from REI. It provides information for hiking locations all around the country, with photos, condition updates, milage and more! With Peaking you will be able to discover knew hikes, keep track of the ones you have done, and flag all the hikes you would like to do. Start peaking today!
+Peaking is an application leveraging the incredible Hiking Project API from REI. It provides information for hiking locations all around the country, with photos, condition updates, mileage and more! With Peaking you will be able to discover knew hikes, keep track of the ones you have done, and flag all the hikes you would like to do. Start peaking today!
 
 # Installation
 
