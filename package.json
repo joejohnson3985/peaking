@@ -50,6 +50,6 @@
   "devDependencies": {
     "enzyme-to-json": "^3.3.5",
     "jest-cli": "git://github.com/hankhsiao/jest.git",
-    "lint": "^0.6.5"
+    "lint": "^0.8.19"
   }
 }
